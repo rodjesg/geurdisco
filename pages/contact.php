@@ -1,6 +1,7 @@
 <?php
 $home = false;
 $title = "Contact";
+$home = false; 
 require "../includes/header.php";
 ?>
 
