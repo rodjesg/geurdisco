@@ -8,7 +8,7 @@
         <div class="row owl-carousel brands">
             <?php
             for ($i = 0; $i < 20; $i++) {
-                include('includes/brand-block.php');
+                include($prepath.'includes/brand-block.php');
             }
             ?>
         </div>
