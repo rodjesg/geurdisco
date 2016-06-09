@@ -2,15 +2,17 @@
     <div class="product-block">
         <div class="product-thumb">
             <div class="product-priceblock">
-                €29.<div>99</div>
+                €29.<div class="decimal">99</div>
             </div>
         </div>
 
-        <h5>Titel van het product</h5>
-        <h6>Subtitel van het product</h6>
-        <div class="button">Add to shopping bag<span class="fa fa-shopping-bag"></span></div>
-        <ul>
-            <li><a href="#">Add to wishlist</a></li>
-        </ul>
+        <div class="deal-content">
+            <h5>Titel van het product</h5>
+            <h6>Subtitel van het product</h6>
+            <div class="button">Add to shopping bag<span class="fa fa-shopping-bag"></span></div>
+            <ul>
+                <li><a href="#">Add to wishlist</a></li>
+            </ul>
+        </div>
     </div>
 </div>

@@ -36,7 +36,13 @@ $(document).ready(function(){
             navigation : true, // Show next and prev buttons
             slideSpeed : 200,
             paginationSpeed : 750,
-            singleItem:true,
+
+            items: 2,
+            itemsDesktop : [1199,2],
+            itemsDesktopSmall : [980,2],
+            itemsTablet: [768,2],
+            itemsMobile : [479,1],
+
             autoPlay: true
         });
     }

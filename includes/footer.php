@@ -41,10 +41,11 @@
             </div>
 
             <div class="columns small-12 medium-4">
-                <h4>Footer heading</h4>
+                <h4>Payment options</h4>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cumque dolor, facilis fugit, illum impedit itaque minus nesciunt perferendis quae repudiandae ut. Cum odit quaerat quas quod, sed vitae voluptas.
+                    You can order our products in a safe environment with the following payment options:
                 </p>
+                <img class="payment-options" src="<?=$prepath?>assets/img/payment-options.jpg" />
             </div>
         </div>
     </div>

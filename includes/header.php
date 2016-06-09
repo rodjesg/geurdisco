@@ -67,7 +67,7 @@
                     <div class="toggle">
                         <div class="fa fa-user"></div>
                         <div class="hide-for-small-only">
-                            <div>Login</div>
+                            <div>Account</div>
                             <div class="fa fa-chevron-down"></div>
                         </div>
                     </div>
@@ -82,6 +82,14 @@
                             <li><a href="#">Create an account</a></li>
                             <li><a href="#">Lost your password?</a></li>
                         </ul>
+                        <div class="language-container">
+                            <h5>Language</h5>
+                            <form>
+                                <input type="radio" name="language" checked value="nl" id="language-nl"><label for="language-nl">Nederlands</label>
+                                <input type="radio" name="language" value="en" id="language-en"><label for="language-en">English</label>
+                            </form>
+                        </div>
+
                     </div>
                 </div>
                 <!-- wishlist -->
