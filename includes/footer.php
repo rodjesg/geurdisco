@@ -1,19 +1,20 @@
-    <!-- Brands slider -->
-    <div class="container">
-        <div class="row">
-            <div class="columns small-12">
-                <h3>Our Brands</h3>
-            </div>
+<!-- Brands slider -->
+<div class="container">
+    <div class="row">
+        <div class="columns small-12">
+            <h3>Our Brands</h3>
         </div>
-        <div class="row owl-carousel brands">
-            <?php
+    </div>
+    <div class="row owl-carousel brands">
+        <?php
             for ($i = 0; $i < 20; $i++) {
                 include($prepath.'includes/brand-block.php');
             }
             ?>
-        </div>
     </div>
-</div> <!-- content end -->
+</div>
+</div>
+<!-- content end -->
 
 <div class="footer">
     <div class="container">
@@ -69,4 +70,5 @@
 <script src="<?=$prepath?>assets/js/app.js"></script>
 
 </body>
+
 </html>
