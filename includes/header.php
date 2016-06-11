@@ -1,4 +1,6 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
     $prepath = "";
     $homepath = "#";
     if ($home !== true) {
@@ -47,8 +49,10 @@
             <div class="top-right">
                 <!-- search -->
                 <div class="search-desktop show-for-large">
-                    <input name="search" type="search" placeholder="I'm searching">
-                    <div class="fa fa-search"></div>
+                    <form method="post" action="search.php">
+                        <input name="search" type="search" placeholder="I'm searching">
+                        <button type="submit" class="fa fa-search"></button>
+                    </form>
                 </div>
 
                 <!-- search mobile / tablet -->
