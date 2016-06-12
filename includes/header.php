@@ -12,12 +12,13 @@
 //    echo "<pre>";
 //    print_r($_SESSION);
 //    echo "</pre>";
-//    die();
+    //die();
 
     if(isset($_SESSION['errors'])) {
         foreach ($_SESSION['errors'] as $error) {
             echo "<script>alert('$error');</script>";
         }
+        unset($_SESSION['errors']);
     }
 ?>
 
@@ -78,33 +79,52 @@
                         </form>
                     </div>
                 </div>
-                <!-- login -->
-                <div class="top-login">
-                    <div class="toggle">
-                        <div class="fa fa-user"></div>
-                        <div class="hide-for-small-only">
-                            <div>Account</div>
-                            <div class="fa fa-chevron-down"></div>
-                        </div>
-                    </div>
-                    <div class="login-container dropdown-container">
-                        <h5>Your account</h5>
-                        <form>
-                            <input type="text" placeholder="E-mail address">
-                            <input type="password" placeholder="Password">
-                            <input type="submit" class="button" value="Login">
-                        </form>
-                        <ul>
-                            <li><a href="#">Create an account</a></li>
-                            <li><a href="#">Lost your password?</a></li>
-                        </ul>
-                        <div class="language-container">
-                            <h5>Language</h5>
-                            <form>
-                                <input type="radio" name="language" checked value="nl" id="language-nl"><label for="language-nl">Nederlands</label>
-                                <input type="radio" name="language" value="en" id="language-en"><label for="language-en">English</label>
-                            </form>
-                        </div>
+                 <!-- login -->
+                        <div class="top-login">
+                            <div class="toggle">
+                                <div class="fa fa-user"></div>
+                                <div class="hide-for-small-only">
+                                    <div>Account</div>
+                                    <div class="fa fa-chevron-down"></div>
+                                </div>
+                            </div>
+                            <div class="login-container dropdown-container">
+                                <h5>Your account</h5>
+                                <?php
+                                    if($_SESSION['login']['status'] == false) {      
+                                ?>
+                                    <form method="post" action="<?=$prepath?>functions/login.php">
+                                        <input type="text" name="email" placeholder="E-mail address">
+                                        <input type="password" name="password" placeholder="Password">
+                                        <input type="submit" class="button" value="Login">
+                                    </form>
+                                    <ul>
+                                        <li><a href="#">Create an account</a></li>
+                                        <li><a href="#">Lost your password?</a></li>
+                                    </ul>
+                                    <?php
+                                    }
+                                    else {
+                                ?>
+                                        <p>
+                                            Je bent ingelogd met account
+                                            <?=$_SESSION['login']['account']?>
+                                        </p>
+                                        <ul>
+                                            <li><a href="<?=$prepath?>functions/logout.php">Logout</a></li>
+                                        </ul>
+                                        <?php
+                                    }
+                                ?>
+                                            <div class="language-container">
+                                                <h5>Language</h5>
+                                                <form>
+                                                    <input type="radio" name="language" checked value="nl" id="language-nl">
+                                                    <label for="language-nl">Nederlands</label>
+                                                    <input type="radio" name="language" value="en" id="language-en">
+                                                    <label for="language-en">English</label>
+                                                </form>
+                                            </div>
 
                     </div>
                 </div>
