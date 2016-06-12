@@ -11,12 +11,30 @@ require "../includes/header.php";
             border-width: 1px;
             padding: 10px;
         }
+        
+        .buttonContact {
+            display: block;
+            width: 50%;
+            align-content: center;
+        }
 
     </style>
 
 
+
     <div class="content">
         <div class="container">
+            <!--  Breadcrumms menu   -->
+            <nav aria-label="You are here:" role="navigation">
+                <ul class="breadcrumbs">
+                    <li><a href="../index.php">Home</a></li>
+                    <li>
+                        <span class="show-for-sr">Current: </span> Support
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Content -->
             <div class="row">
                 <div class="small-4 large-4 columns">
                     <h2>Send a message</h2>
@@ -38,7 +56,6 @@ require "../includes/header.php";
                     </div>
                 </div>
 
-
                 <div class="small-4 large-4 columns">
 
                     <h2>Live chat</h2>
@@ -48,15 +65,15 @@ require "../includes/header.php";
 
                 </div>
 
-
-
-
-
                 <div class="small-6 large-4 columns">
 
+                    <h2>Social Media</h2>
 
-                    <h2>Social media</h2>
-
+                    <div class="button buttonContact"><span class="fa fa-facebook-official"></span><span>&nbsp;Facebook</span></div>
+                    <div class="button buttonContact"><span class="fa fa-instagram"></span><span>&nbsp;Instagram</span></div>
+                    <div class="button buttonContact"><span class="fa fa-twitter"></span><span>&nbsp;Twitter</span></div>
+                    <div class="button buttonContact"><span class="fa fa-google-plus"></span><span>&nbsp;Google +</span></div>
+                    <div class="button buttonContact"><span class="fa fa-whatsapp"></span><span>&nbsp;WhatsApp</span></div>
 
                 </div>
             </div>
