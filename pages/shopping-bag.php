@@ -1,10 +1,23 @@
 <?php
 $title = "Shopping bag";
+$home = false;
 require "../includes/header.php";
 ?>
 
-Shopping bag pagina
+    <div class="content">
+        <div class="container">
+            <!--  Breadcrums menu   -->
+            <?php include "../includes/breadcrumbs.php";?>
 
-<?php
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <?php
 require "../includes/footer.php";
 ?>
