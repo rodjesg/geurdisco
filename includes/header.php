@@ -135,10 +135,10 @@
                             </div>
                         </div>
                         <!-- wishlist -->
-                        <div class="top-wishlist hide-for-small-only">
+                        <a href="<?=$prepath?>pages/wishlist.php" class="top-wishlist hide-for-small-only">
                             <div class="fa fa-star"></div>
                             <div>Wishlist</div>
-                        </div>
+                        </a>
                         <!-- shopping bag -->
                         <div class="top-shoppingbag">
                             <div class="toggle">

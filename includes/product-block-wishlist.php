@@ -12,7 +12,7 @@
             <h6></h6>
             <a href="<?=$prepath?>functions/add-shoppingbag.php?ProductId=<?=$row['ProductID']?>" class="button">Add to shopping bag<span class="fa fa-shopping-bag"></span></a>
             <ul>
-                <li><a href="<?=$prepath?>functions/add-wishlist.php?ProductId=<?=$row['ProductID']?>">Add to wishlist</a></li>
+                <li><a href="<?=$prepath?>functions/delete-wishlist.php?ProductId=<?=$row['ProductID']?>">Delete from wishlist</a></li>
             </ul>
         </div>
     </div>

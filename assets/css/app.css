@@ -37,6 +37,9 @@
         display: inline-block;
         width: 100%;
     }
+    .topmenu-main .top-wishlist {
+        color: #000;
+    }
     .top-logo {
         position: relative;
         width: 140px;

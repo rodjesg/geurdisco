@@ -32,25 +32,26 @@ if ($_GET["ProductId"] && is_numeric($_GET["ProductId"])){
 
         // If result matched $username and $password, table row must be 1 row
         if ($count==1) {
-            echo "product reeds gekoppeld";
-            die();
+            $_SESSION['errors'] = array("Product reeds gekoppeld");
         } else {
             //query uitvoeren die het id in de wishlist tabel zet 
             $sql="INSERT INTO wishlist(`ProductID`,`AccountID`) VALUES ('$productId','$accountId')";
             if(mysqli_query($conn, $sql)) {
-                echo "als het goed is ingevoerd";
+                $_SESSION['errors'] = array("Als het goed is ingevoerd");
             }
             else {
-                echo "Het is niet gelukt. Geen idee waarom";
+                $_SESSION['errors'] = array("Niet gelukt, geen idee waarom");
             }
         }
     }
     else {
         // zo niet, geef melding je moet inloggen
-        echo "je moet eerst inloggen";
+        $_SESSION['errors'] = array("Je moet eerst inloggen");
     }
 }
 else {
-    echo "foute url";
+   $_SESSION['errors'] = array("Foute url");
 }
+
+ header('location:../index.php');
 
