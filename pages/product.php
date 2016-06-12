@@ -19,9 +19,6 @@ require "../includes/header.php";
     }
 </style>
 
-
-
-
 Product pagina
 
 <div class="content">

@@ -32,7 +32,7 @@ if ($conn->connect_error) {
 
         <?php
 
-        $queryProduct = "SELECT * FROM product ORDER BY ProductID DESC ";
+        $queryProduct = "SELECT * FROM product ORDER BY ProductID DESC LIMIT 10";
         $resultProduct = mysqli_query($conn,$queryProduct);
         while ($row = $resultProduct->fetch_row()) {
             include('includes/product-block.php');
