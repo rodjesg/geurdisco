@@ -42,15 +42,6 @@ if ($conn->connect_error) {
         </div>
 
 
-
-
-
-
-
-
-
-
-
         <div class="row">
             <div class="columns small-12">
                 <h3>Recently added</h3>
