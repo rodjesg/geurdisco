@@ -111,8 +111,9 @@
                                     else {
                                 ?>
                                         <p>
-                                            Hoi <strong><?=$_SESSION['login']['accountInfo']['SureName']?></strong>,<br/>
-                                            Je bent ingelogd met account:<br/>
+                                            Hoi <strong><?=$_SESSION['login']['accountInfo']['SureName']?></strong>,
+                                            <br/> Je bent ingelogd met account:
+                                            <br/>
                                             <strong><?=$_SESSION['login']['accountInfo']['Email']?></strong>
                                         </p>
                                         <ul>
@@ -150,14 +151,13 @@
                                 <p>
                                     There are currently no items in your shopping bag.
                                 </p>
-                                <a href="#" class="button">View shopping bag</a>
+                                <a href="<?=$prepath?>pages/shopping-bag.php" class="button">View shopping bag</a>
                             </div>
                         </div>
                         <div class="top-openmobile show-for-small-only">
                             <div class="fa fa-bars"></div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
