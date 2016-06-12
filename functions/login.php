@@ -8,17 +8,11 @@ $username = "root";
 $password = "root";
 $database = "geurdiscounter";
 
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
 
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-
 // Check connection
 if ($conn->connect_error) {
-    echo "test";
     die("Connection failed: " . $conn->connect_error);
 }
 
@@ -34,7 +28,6 @@ $password=$_POST['password'];
 //$password = mysql_real_escape_string($password);
 
 $sql="SELECT * FROM account WHERE Email='$username' and Password='$password'";
-echo "<p>".$sql."</p>";
 $result=mysqli_query($conn, $sql);
 
 // Mysql_num_row is counting table row
@@ -45,10 +38,11 @@ if ($count==1) {
     // create login sessions
     $_SESSION['login']['status'] = true;
     $_SESSION['login']['account'] = $username;
-    header('location:../index.php');
 } else {
-    echo "Unsuccessful, Your account does not exisist! $count";
+    $_SESSION['errors'] = array("Je moeder!");
 }
+
+header('location:../index.php');
 
 
 ?>

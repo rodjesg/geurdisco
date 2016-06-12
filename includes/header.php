@@ -9,18 +9,23 @@
         $homepath = "../index.php";
     }
 
-//    echo "test"; echo "<pre>";
+//    echo "<pre>";
 //    print_r($_SESSION);
 //    echo "</pre>";
-//
+
 if(!isset($_SESSION['login'])) {
     $_SESSION['login']['status'];
     $_SESSION['login']['account'];
 }
-//
-//    echo "test"; echo "<pre>";
-//    print_r($_SESSION);
-//    echo "</pre>";
+
+// check and display error messages
+if (isset($_SESSION['errors'])) {
+    foreach($_SESSION['errors'] as $error) {
+        echo "<script>alert('$error')</script>";
+    }
+    unset($_SESSION['errors']);
+}
+
 ?>
 
     <!doctype html>
