@@ -66,8 +66,8 @@
                     <div class="top-right">
                         <!-- search -->
                         <div class="search-desktop show-for-large">
-                            <form method="post" method="post" action="<?=$prepath?>/functions/search.php">
-                                <input name="search" type="search" placeholder="I'm searching">
+                            <form method="post" method="post" action="<?=$prepath?>functions/search.php">
+                                <input name="searchterm" type="search" placeholder="I'm searching">
                                 <button type="submit" class="fa fa-search"></button>
                             </form>
                         </div>
