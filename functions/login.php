@@ -48,6 +48,8 @@ if ($count==1) {
     header('location:../index.php');
 } else {
     echo "Unsuccessful, Your account does not exisist! $count";
+    $_SESSION['errors'] = array("Your username and password combination was incorrect. Try again.");
+    header('location:../index.php');
 }
 
 
