@@ -11,7 +11,7 @@
             <h6></h6>
             <div class="button">Add to shopping bag<span class="fa fa-shopping-bag"></span></div>
             <ul>
-                <li><a href="<?=$prepath?>functions/add-wishlist?id=<?=$row['ProductId']?>">Add to wishlist</a></li>
+                <li><a href="<?=$prepath?>functions/add-wishlist.php?id=<?=$row['ProductId']?>">Add to wishlist</a></li>
             </ul>
         </div>
     </div>
