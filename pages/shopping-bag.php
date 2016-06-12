@@ -8,9 +8,6 @@ require "../includes/header.php";
         <div class="container">
             <!--  Breadcrums menu   -->
             <?php include "../includes/breadcrumbs.php";?>
-                <h3>shopping bag</h3>
-
-
 
 
 
@@ -19,9 +16,7 @@ require "../includes/header.php";
 
 
         </div>
-
     </div>
-
 
     <?php
 require "../includes/footer.php";

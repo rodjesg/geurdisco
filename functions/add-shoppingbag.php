@@ -1,62 +1,45 @@
 <?php
-// add.php
+// Add product to shopping bag
 session_start();
-
-// Het product wat we toevoegen moeten we eerst controleren
-if(is_numeric($_POST['productnummer'])) $productnummer = $_POST['productnummer'];
-else exit("Productnummer is geen integer");
-if(is_numeric($_POST['hoeveelheid'])) $hoeveelheid = $_POST['hoeveelheid'];
-else exit("Invoer is geen getal");
-
-// Kijken of er wel iets besteld is?
-if ($hoeveelheid == 0) {
-  echo "<p>Ja dag Jan! 0 bestellen doen we niet aan!</p>\n";
-  echo "<p><a href=\"javascript:history.back()\">pagina terug!</a></p>\n";
-  exit();
+if (!isset($_SESSION['shoppingbag'])) {
+    $_SESSION['shoppingbag'] = "";
 }
 
-// Controleren of er al inhoud is op de winkelwagen
-if (empty($_SESSION['cart'])){
-  // Nee dus, een nieuwe maken
-  $_SESSION['cart'] = $productnummer.",".$hoeveelheid;  // Het productnummer,hoeveelheid staat dus in een sessie
-} else {
-  // Winkelwagen opsplitsen op de pipe
-  $cart = explode("|",$_SESSION['cart']);
+/**
+Dit script voegt standaard een product toe aan de shopping bag
+Wanneer dit product word toegevoegd vanuit de shoppingbag pagina of de productpagina, kan een gewenst aantal meegegeven worden
+Dit word hier ook afgevangen
 
-  // Winkelwagen inhoud tellen
-  $count = count($cart);
+- ProductID
+- Aantal
 
-  // En controleren of het product al in de winkelwagen zit
-  $add = TRUE;   // var om later te kijken of we moeten toevoegen
-  foreach($cart as $products)
-  {
-    // Exploden
-    /*
-      $product[x] -->
-         x == 0 -> productnummer
-         x == 1 -> hoeveelheid
-    */
-    $product = explode(",",$products);
-    if ($product[0] == $productnummer) {
-      // Product al in de winkelwagen
-      $product[1] = $product[1] + $hoeveelheid;  // Nieuwe hoeveelheid is oude + nieuwe
-      $add = FALSE;  // Dus niet toevoegen
+*/
+
+
+// Taking products from the order
+if ($_GET['ProductId']) {
+    $productID = $_GET['ProductId'];
+        
+    if ($_GET['quantity'] && is_numeric($_GET['quantity'])) {
+        $quantity = $_GET['quantity'];
+    }
+    else {
+        $quantity = 1;
     }
 
-    // En weer in de sessie zetten
-    $i++;
-    if ($i == 1) {
-      $_SESSION['cart'] = $product[0].",".$product[1];
-    } else {
-      $_SESSION['cart'] = $_SESSION['cart']."|".$product[0].",".$product[1];
-    }
-  }
-
-  if ($add) { // Als we dus wel moeten toevoegen
-    $_SESSION['cart'] = $_SESSION['cart']."|".$productnummer.",".$hoeveelheid;
-  }
+    $_SESSION['shoppingbag'][$productID] = $quantity;
+    echo "<pre>";
+    print_r($_SESSION['shoppingbag']);
+    echo "</pre>";
+    die();
+    
+}else {
+    echo "NO dat doe ik niet";
+    
 }
+ //echo $productID;
 
-// forward to cart
-header("../pages/shopping-bag.php");
+
+//header('location:../pages/shopping-bag.php');
+
 ?>
