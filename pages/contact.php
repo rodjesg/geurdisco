@@ -7,9 +7,9 @@ require "../includes/header.php";
 
     <style>
         .block1Contact {
-            border-style: ridge;
+            border: 1px solid;
             border-width: 1px;
-            padding: 10px;
+            padding: 12px 20px;
         }
         
         .buttonContact {
