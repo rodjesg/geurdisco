@@ -45,10 +45,10 @@ if ($count==1) {
     // create login sessions
     $_SESSION['login']['status'] = true;
     $_SESSION['login']['account'] = $username;
-    header('location:../index.php');
 } else {
-    echo "Unsuccessful, Your account does not exisist! $count";
+    $_SESSION['errors'] = array("Je moeder!");
 }
+header('location:../index.php');
 
 
 ?>
