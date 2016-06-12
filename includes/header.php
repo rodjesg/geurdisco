@@ -111,8 +111,9 @@
                                     else {
                                 ?>
                                         <p>
-                                            Je bent ingelogd met account
-                                            <?=$_SESSION['login']['account']?>
+                                            Hoi <strong><?=$_SESSION['login']['accountInfo']['SureName']?></strong>,<br/>
+                                            Je bent ingelogd met account:<br/>
+                                            <strong><?=$_SESSION['login']['accountInfo']['Email']?></strong>
                                         </p>
                                         <ul>
                                             <li><a href="<?=$prepath?>functions/logout.php">Logout</a></li>
