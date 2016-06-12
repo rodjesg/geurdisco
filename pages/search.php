@@ -15,7 +15,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
 ?>
 
 <div class="content">
@@ -35,21 +34,24 @@ if ($conn->connect_error) {
                     </div>
 
                         <div id="search-results">
-                        <?php
-                            if(isset($_POST['search']) && is_string($_POST['search'])) {
-                                $searchterm = $_POST['search'];
-                                $query = "SELECT * FROM product WHERE ProductName LIKE '%$searchterm%'";
-            //                    echo $query;
-            //                    die();
-                                $result = mysqli_query($conn,$query);
-                                while ($row = $result->fetch_row()) {
-                                    include('../includes/product-block-results.php');
-                                }
-                            }
-                            else {
 
-                            }
-                        ?>
+<!--                        --><?php
+//                            if(isset($_POST['search']) && is_string($_POST['search'])) {
+//                                $searchterm = $_POST['search'];
+//                                $query = "SELECT * FROM product WHERE ProductName LIKE '%$searchterm%'";
+//            //                    echo $query;
+//            //                    die();
+//                                $result = mysqli_query($conn,$query);
+//                                while ($row = $result->fetch_row()) {
+//                                    include('../includes/product-block-results.php');
+//                                }
+//                            }
+//                            else {
+//                            }
+//                        ?>
+
+
+                            
                         </div>
 
                 </div>
@@ -59,6 +61,5 @@ if ($conn->connect_error) {
 </div>
 
 <?php
-
 require "../includes/footer.php";
 ?>
