@@ -1,6 +1,7 @@
 <?php
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
+    session_start();
     $prepath = "";
     $homepath = "#";
     if ($home !== true) {
@@ -8,10 +9,10 @@
         $homepath = "../index.php";
     }
 
-    echo "<pre>";
-    print_r($_SESSION);
-    echo "</pre>";
-    die();
+//    echo "<pre>";
+//    print_r($_SESSION);
+//    echo "</pre>";
+//    die();
 
     if(isset($_SESSION['errors'])) {
         foreach ($_SESSION['errors'] as $error) {
