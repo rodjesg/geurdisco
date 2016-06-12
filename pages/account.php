@@ -2,6 +2,20 @@
 $title = "Account";
 $home = false;
 require "../includes/header.php";
+
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
+$database = "geurdisco";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 ?>
 
 <style>
@@ -54,6 +68,10 @@ input[type=password]{
 
 </style>
 
+
+
+
+
  <div class="content">
      <div class="container">
          <div class="row">
@@ -75,16 +93,16 @@ input[type=password]{
              <div class="large-6 columns right">
                  <div class="rechtsbox">
                  <h3>Create an account</h3>
-                 <form class="rechts">
+                 <form class="rechts" action="../functions/register.php" method="post">
                      <fieldset>
                           <label for="email">E-mail adress *</label>
-					      <input type="text" placeholder="Fill in you're E-mail"><br>
+					      <input type="text" name="email" placeholder="Fill in you're E-mail"><br>
                           <label for="email">Confirm E-mail adress *</label>
-					      <input type="text" placeholder="Confirm you're E-mail"><br>
+					      <input type="text" name="emailConfirm" placeholder="Confirm you're E-mail"><br>
                           <label for="email">Password *</label>
-					      <input type="password" placeholder="Fill in you're password"><br>
+					      <input type="password" name="password" placeholder="Fill in you're password"><br>
                           <label for="email">Confirm password *</label>
-					      <input type="password" placeholder="Confirm you're password"><br> 
+					      <input type="password" name="passwordConfirm" placeholder="Confirm you're password"><br> 
                           <button type="submit" class="button">Register  <span class="fa fa-check"></span></button>
                      </fieldset>                
                  </form>
