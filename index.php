@@ -2,7 +2,7 @@
 $title = "Home";
 $home = true;
 require "includes/header.php";
-include "../includes/dbconnect.php";
+include "includes/dbconnect.php";
 
 ?>
 
