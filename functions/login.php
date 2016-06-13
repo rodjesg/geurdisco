@@ -3,10 +3,7 @@ ob_start();
 session_start();
 
 // Server settings // Let op op mac wordt er gebruik gemaakt van een wachtwoord. Windows niet!!!
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$database = "geurdiscounter";
+include "../includes/dbconnect.php";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);

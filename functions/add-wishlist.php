@@ -1,10 +1,7 @@
 <?php
 session_start();
 ob_start();
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$database = "geurdiscounter";
+include "../includes/dbconnect.php";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -54,4 +51,3 @@ else {
 }
 
  header('location:../index.php');
-
