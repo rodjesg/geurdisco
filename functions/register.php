@@ -1,18 +1,6 @@
 <?php
 
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$database = "geurdisco";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
- 
+require "../includes/dbconnect.php";
 
 // PHP code om te registeren (account):
 
@@ -46,13 +34,12 @@ if ($count > 0){
     die();
 }
 
+//4. insert query in database
+ $sql = "INSERT INTO `account` (`Email`, `Password`) VALUES ('$email','$password');";
+ $result = mysqli_query($conn,$sql);
+ echo "Account is succesvol aangemaakt!";
 
-    //4. insert query in database
-     $sql = "INSERT INTO `account` (`Email`, `Password`) VALUES ('$email','$password');";
-     $result = mysqli_query($conn,$sql);
-     echo "Account is succesvol aangemaakt!";
-
-    ?>
+?>
 
 
 

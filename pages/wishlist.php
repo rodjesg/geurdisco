@@ -2,27 +2,16 @@
 $home = false;
 $title = "Wishlist";
 require "../includes/header.php";
-$servername = "127.0.0.1";
-$username = "root";
-$password = "root";
-$database = "geurdiscounter";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require "../includes/dbconnect.php";
 ?>
 
 
- <div class="content">
-     <div class="container">
-         <div class="row">
-             <div class="columns small-12">
-                
-                 <?php
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="columns small-12">
+
+                    <?php
                     if (isset($_SESSION['login']) && $_SESSION['login']['status'] == true) {
                         
                         echo "<h3>".$_SESSION['login']['accountInfo']['SureName']."'s personal wishlist</h3>";
@@ -46,12 +35,12 @@ if ($conn->connect_error) {
                         echo "<p>Je bent niet ingelogd.</p>";
                     }
                  ?>
-                 
-             </div>
-         </div>
-     </div>
-</div>
 
-<?php
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
 require "../includes/footer.php";
 ?>

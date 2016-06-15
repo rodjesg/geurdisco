@@ -1,9 +1,9 @@
-
-
 <?php
 $home = false ;
 $title = "Product";
 require "../includes/header.php";
+require "../includes/dbconnect.php";
+
 ?>
 
 <style>

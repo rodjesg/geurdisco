@@ -3,18 +3,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 session_start();
 
-$servername = "127.0.0.1";
-$username = "root";
-$password = "root";
-$database = "geurdiscounter";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require "../includes/dbconnect.php";
 
 if(isset($_POST['searchterm']) && is_string($_POST['searchterm'])) {
     echo "term ingevoerd";

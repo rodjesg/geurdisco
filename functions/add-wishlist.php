@@ -1,19 +1,7 @@
 <?php
 session_start();
 ob_start();
-$servername = "127.0.0.1";
-$username = "root";
-$password = "root";
-$database = "geurdiscounter";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
- 
+require "../includes/dbconnect.php";
 
 if ($_GET["ProductId"] && is_numeric($_GET["ProductId"])){
     $productId = $_GET["ProductId"];
@@ -54,4 +42,3 @@ else {
 }
 
  header('location:../index.php');
-
