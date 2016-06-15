@@ -35,20 +35,20 @@ if ($conn->connect_error) {
 
                         <div id="search-results">
 
-<!--                        --><?php
-//                            if(isset($_POST['search']) && is_string($_POST['search'])) {
-//                                $searchterm = $_POST['search'];
-//                                $query = "SELECT * FROM product WHERE ProductName LIKE '%$searchterm%'";
-//            //                    echo $query;
-//            //                    die();
-//                                $result = mysqli_query($conn,$query);
-//                                while ($row = $result->fetch_row()) {
-//                                    include('../includes/product-block-results.php');
-//                                }
-//                            }
-//                            else {
-//                            }
-//                        ?>
+                        <?php
+                            if(isset($_POST['searchterm']) && is_string($_POST['searchterm'])) {
+                                $searchterm = $_POST['searchterm'];
+                                $query = "SELECT * FROM product WHERE ProductName LIKE '%$searchterm%'";
+            //                    echo $query;
+            //                    die();
+                                $result = mysqli_query($conn,$query);
+                                while ($row = $result->fetch_array(true)) {
+                                    include('../includes/product-block-results.php');
+                                }
+                            }
+                            else {
+                            }
+                        ?>
 
 
                             

@@ -7,10 +7,12 @@
     </div>
     <div class="row owl-carousel brands">
         <?php
-            for ($i = 0; $i < 20; $i++) {
-                include($prepath.'includes/brand-block.php');
-            }
-            ?>
+        $queryBrand = "SELECT BrandImage FROM brand LIMIT 75";
+        $resultBrand = mysqli_query($conn,$queryBrand);
+        while ($row = $resultBrand->fetch_array(true)) {
+            include($prepath.'includes/brand-block.php');
+        }
+        ?>
     </div>
 </div>
 </div>
@@ -66,8 +68,23 @@
 <script src="<?=$prepath?>assets/js/vendor/what-input.js"></script>
 <script src="<?=$prepath?>assets/js/vendor/foundation.min.js"></script>
 <script src="<?=$prepath?>assets/js/owl.carousel.js"></script>
+<script src="<?=$prepath?>assets/js/notie.min.js"></script>
 <!-- basic scripts -->
 <script src="<?=$prepath?>assets/js/app.js"></script>
+<?php
+// show error messages
+if(isset($_SESSION['errors'])) {
+    foreach ($_SESSION['errors'] as $error) {
+        echo "<script>notie.alert(4, '".$error."', 2);</script>";
+    }
+    unset($_SESSION['errors']);
+}
+?>
+<script>
+    $(document).ready(function(){
+        $(".loadscreen").fadeOut();
+    });
+</script>
 
 </body>
 

@@ -5,7 +5,7 @@ require "includes/header.php";
 
 $servername = "127.0.0.1";
 $username = "root";
-$password = "";
+$password = "root";
 $database = "geurdiscounter";
 
 // Create connection
@@ -23,20 +23,19 @@ if ($conn->connect_error) {
 
             <div class="row">
                 <div class="columns small-12">
-                    <h3>Test</h3>
+                    <h3>Current Deals</h3>
                 </div>
             </div>
             <div class="row owl-carousel products">
 
                 <?php
+                $queryProduct = "SELECT * FROM product ORDER BY ProductID DESC LIMIT 10";
+                $resultProduct = mysqli_query($conn,$queryProduct);
+                while ($row = $resultProduct->fetch_array(true)) {
+                    include('includes/product-block.php');
+                }
+                ?>
 
-        $queryProduct = "SELECT * FROM product ORDER BY ProductID DESC LIMIT 10";
-        $resultProduct = mysqli_query($conn,$queryProduct);
-        while ($row = $resultProduct->fetch_array(true)) {
-            include('includes/product-block.php');
-        }
-
-        ?>
             </div>
 
 
@@ -46,10 +45,12 @@ if ($conn->connect_error) {
                 </div>
                 <div class="row owl-carousel products">
                     <?php
-            for ($i = 0; $i < 8; $i++) {
-                include('includes/product-block.php');
-            }
-            ?>
+                    $queryProduct = "SELECT * FROM product ORDER BY ProductID DESC LIMIT 20";
+                    $resultProduct = mysqli_query($conn,$queryProduct);
+                    while ($row = $resultProduct->fetch_array(true)) {
+                        include('includes/product-block.php');
+                    }
+                    ?>
                 </div>
 
                 <!-- Ladies -->
@@ -59,11 +60,13 @@ if ($conn->connect_error) {
                     </div>
                 </div>
                 <div class="row owl-carousel products">
-                    <?php
-            for ($i = 0; $i < 8; $i++) {
-                include('includes/product-block.php');
-            }
-            ?>
+                        <?php
+                        $queryProduct = "SELECT * FROM product WHERE CategoryID = 1 ORDER BY ProductID DESC LIMIT 20";
+                        $resultProduct = mysqli_query($conn,$queryProduct);
+                        while ($row = $resultProduct->fetch_array(true)) {
+                            include('includes/product-block.php');
+                        }
+                        ?>
                 </div>
                 <div class="row">
                     <div class="columns small-12">
@@ -79,29 +82,12 @@ if ($conn->connect_error) {
                 </div>
                 <div class="row owl-carousel products">
                     <?php
-            for ($i = 0; $i < 8; $i++) {
-                include('includes/product-block.php');
-            }
-            ?>
-                </div>
-                <div class="row">
-                    <div class="columns small-12">
-                        <a href="#" class="viewmore">View all products <span class="fa fa-chevron-right"></span></a>
-                    </div>
-                </div>
-
-                <!-- Unisex -->
-                <div class="row">
-                    <div class="columns small-12">
-                        <h3>Unisex</h3>
-                    </div>
-                </div>
-                <div class="row owl-carousel products">
-                    <?php
-            for ($i = 0; $i < 4; $i++) {
-                include('includes/product-block.php');
-            }
-            ?>
+                    $queryProduct = "SELECT * FROM product WHERE CategoryID = 2 ORDER BY ProductID DESC LIMIT 20";
+                    $resultProduct = mysqli_query($conn,$queryProduct);
+                    while ($row = $resultProduct->fetch_array(true)) {
+                        include('includes/product-block.php');
+                    }
+                    ?>
                 </div>
                 <div class="row">
                     <div class="columns small-12">
@@ -117,29 +103,12 @@ if ($conn->connect_error) {
                 </div>
                 <div class="row owl-carousel products">
                     <?php
-            for ($i = 0; $i < 4; $i++) {
-                include('includes/product-block.php');
-            }
-            ?>
-                </div>
-                <div class="row">
-                    <div class="columns small-12">
-                        <a href="#" class="viewmore">View all products <span class="fa fa-chevron-right"></span></a>
-                    </div>
-                </div>
-
-                <!-- Special Editions -->
-                <div class="row">
-                    <div class="columns small-12">
-                        <h3>Special Editions</h3>
-                    </div>
-                </div>
-                <div class="row owl-carousel products">
-                    <?php
-            for ($i = 0; $i < 6; $i++) {
-                include('includes/product-block.php');
-            }
-            ?>
+                    $queryProduct = "SELECT * FROM product WHERE CategoryID = 3 ORDER BY ProductID DESC LIMIT 20";
+                    $resultProduct = mysqli_query($conn,$queryProduct);
+                    while ($row = $resultProduct->fetch_array(true)) {
+                        include('includes/product-block.php');
+                    }
+                    ?>
                 </div>
                 <div class="row">
                     <div class="columns small-12">

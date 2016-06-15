@@ -13,14 +13,6 @@
     if(!isset($_SESSION['login'])) {
         $_SESSION['login']['status'] = false;
     }
-
-    // show error messages
-    if(isset($_SESSION['errors'])) {
-        foreach ($_SESSION['errors'] as $error) {
-            echo "<script>alert('$error');</script>";
-        }
-        unset($_SESSION['errors']);
-    }
 ?>
 
     <!doctype html>
@@ -40,6 +32,8 @@
         <link rel="stylesheet" href="<?=$prepath?>assets/css/font-awesome.min.css" />
         <!-- Important Owl stylesheet -->
         <link rel="stylesheet" href="<?=$prepath?>assets/css/owl.carousel.css">
+        <!-- Notifier -->
+        <link rel="stylesheet" href="<?=$prepath?>assets/css/notie.css" />
         <!-- Default Theme -->
         <link rel="stylesheet" href="<?=$prepath?>assets/css/owl.theme.css">
         <!-- theme style -->
@@ -48,7 +42,10 @@
     </head>
 
     <body>
-
+        <!-- loadscreen -->
+        <div class="loadscreen">
+            <div class="loader"></div>
+        </div>
         <!-- topmenu -->
         <div class="topmenu color-primary-2">
 
@@ -66,7 +63,7 @@
                     <div class="top-right">
                         <!-- search -->
                         <div class="search-desktop show-for-large">
-                            <form method="post" method="post" action="<?=$prepath?>functions/search.php">
+                            <form method="post" method="post" action="<?=$prepath?>pages/search.php">
                                 <input name="searchterm" type="search" placeholder="I'm searching">
                                 <button type="submit" class="fa fa-search"></button>
                             </form>

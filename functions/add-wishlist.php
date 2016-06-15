@@ -3,7 +3,7 @@ session_start();
 ob_start();
 $servername = "127.0.0.1";
 $username = "root";
-$password = "";
+$password = "root";
 $database = "geurdiscounter";
 
 // Create connection
@@ -32,25 +32,25 @@ if ($_GET["ProductId"] && is_numeric($_GET["ProductId"])){
 
         // If result matched $username and $password, table row must be 1 row
         if ($count==1) {
-            $_SESSION['errors'] = array("Product reeds gekoppeld");
+            $_SESSION['errors'] = array("Product reeds toegevoegd aan de wishlist.");
         } else {
             //query uitvoeren die het id in de wishlist tabel zet 
             $sql="INSERT INTO wishlist(`ProductID`,`AccountID`) VALUES ('$productId','$accountId')";
             if(mysqli_query($conn, $sql)) {
-                $_SESSION['errors'] = array("Als het goed is ingevoerd");
+                $_SESSION['errors'] = array("Product succesvol toegevoegd aan de wishlist.");
             }
             else {
-                $_SESSION['errors'] = array("Niet gelukt, geen idee waarom");
+                $_SESSION['errors'] = array("Er ging iets mis. Probeer opnieuw.");
             }
         }
     }
     else {
         // zo niet, geef melding je moet inloggen
-        $_SESSION['errors'] = array("Je moet eerst inloggen");
+        $_SESSION['errors'] = array("Je bent niet ingelogd.");
     }
 }
 else {
-   $_SESSION['errors'] = array("Foute url");
+   $_SESSION['errors'] = array("Er ging iets mis. Probeer opnieuw.");
 }
 
  header('location:../index.php');

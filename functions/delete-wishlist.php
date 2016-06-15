@@ -3,7 +3,7 @@ session_start();
 ob_start();
 $servername = "127.0.0.1";
 $username = "root";
-$password = "";
+$password = "root";
 $database = "geurdiscounter";
 
 // Create connection

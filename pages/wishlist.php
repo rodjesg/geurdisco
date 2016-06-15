@@ -4,7 +4,7 @@ $title = "Wishlist";
 require "../includes/header.php";
 $servername = "127.0.0.1";
 $username = "root";
-$password = "";
+$password = "root";
 $database = "geurdiscounter";
 
 // Create connection
@@ -27,7 +27,7 @@ if ($conn->connect_error) {
                         
                         echo "<h3>".$_SESSION['login']['accountInfo']['SureName']."'s personal wishlist</h3>";
                         
-                        $query = "SELECT * FROM wishlist INNER JOIN product ON wishlist.ProductID = product.ProductID  WHERE wishlist.AccountID = ".$_SESSION['login']['accountInfo']['AccountID'].";";
+                        $query = "SELECT * FROM wishlist INNER JOIN product ON wishlist.ProductID = product.ProductID  WHERE wishlist.AccountID = ".$_SESSION['login']['accountInfo']['AccountID']." ORDER BY wishlist.WishlistID DESC;";
                         $result = mysqli_query($conn,$query);
                         
                         // check if account has wishlist product
