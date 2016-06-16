@@ -17,9 +17,9 @@ include "includes/dbconnect.php";
             <div class="row owl-carousel products">
 
                 <?php
-                $queryProduct = "SELECT * FROM product ORDER BY ProductID DESC LIMIT 10";
-                $resultProduct = mysqli_query($conn,$queryProduct);
-                while ($row = $resultProduct->fetch_array(true)) {
+                $query = "SELECT * FROM product ORDER BY ProductID DESC LIMIT 10";
+                $result = mysqli_query($conn,$query);
+                while ($row = $result->fetch_array(true)) {
                     include('includes/product-block.php');
                 }
                 ?>
@@ -33,9 +33,9 @@ include "includes/dbconnect.php";
                 </div>
                 <div class="row owl-carousel products">
                     <?php
-                    $queryProduct = "SELECT * FROM product ORDER BY ProductID DESC LIMIT 20";
-                    $resultProduct = mysqli_query($conn,$queryProduct);
-                    while ($row = $resultProduct->fetch_array(true)) {
+                    $query = "SELECT * FROM product ORDER BY ProductID DESC LIMIT 20";
+                    $result = mysqli_query($conn,$query);
+                    while ($row = $result->fetch_array(true)) {
                         include('includes/product-block.php');
                     }
                     ?>
@@ -49,9 +49,9 @@ include "includes/dbconnect.php";
                 </div>
                 <div class="row owl-carousel products">
                         <?php
-                        $queryProduct = "SELECT * FROM product WHERE CategoryID = 1 ORDER BY ProductID DESC LIMIT 20";
-                        $resultProduct = mysqli_query($conn,$queryProduct);
-                        while ($row = $resultProduct->fetch_array(true)) {
+                        $query = "SELECT * FROM product WHERE CategoryID = 1 ORDER BY ProductID DESC LIMIT 20";
+                        $result = mysqli_query($conn,$query);
+                        while ($row = $result->fetch_array(true)) {
                             include('includes/product-block.php');
                         }
                         ?>
@@ -70,9 +70,9 @@ include "includes/dbconnect.php";
                 </div>
                 <div class="row owl-carousel products">
                     <?php
-                    $queryProduct = "SELECT * FROM product WHERE CategoryID = 2 ORDER BY ProductID DESC LIMIT 20";
-                    $resultProduct = mysqli_query($conn,$queryProduct);
-                    while ($row = $resultProduct->fetch_array(true)) {
+                    $query = "SELECT * FROM product WHERE CategoryID = 2 ORDER BY ProductID DESC LIMIT 20";
+                    $result = mysqli_query($conn,$query);
+                    while ($row = $result->fetch_array(true)) {
                         include('includes/product-block.php');
                     }
                     ?>
@@ -91,9 +91,9 @@ include "includes/dbconnect.php";
                 </div>
                 <div class="row owl-carousel products">
                     <?php
-                    $queryProduct = "SELECT * FROM product WHERE CategoryID = 3 ORDER BY ProductID DESC LIMIT 20";
-                    $resultProduct = mysqli_query($conn,$queryProduct);
-                    while ($row = $resultProduct->fetch_array(true)) {
+                    $query = "SELECT * FROM product WHERE CategoryID = 3 ORDER BY ProductID DESC LIMIT 20";
+                    $result = mysqli_query($conn,$query);
+                    while ($row = $result->fetch_array(true)) {
                         include('includes/product-block.php');
                     }
                     ?>

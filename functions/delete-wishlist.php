@@ -15,18 +15,18 @@ if ($_GET["ProductId"] && is_numeric($_GET["ProductId"])){
         // check if product al aan gebruiker gekoppeld
         $sql="DELETE FROM wishlist WHERE ProductID='$productId' and AccountID='$accountId'";
         if (mysqli_query($conn, $sql)) {
-             $_SESSION['errors'] = array("Product succesvol van de wishlist verwijderd");
+             $_SESSION['errors'] = array("Product succesvol van de wishlist verwijderd.");
         }
         else {
-             $_SESSION['errors'] = array("Er ging iets mis");
+             $_SESSION['errors'] = array("Er ging iets mis. Probeer opnieuw.");
         }
     }
     else {
         // zo niet, geef melding je moet inloggen
-        $_SESSION['errors'] = array("Je moet eerst inloggen");
+        $_SESSION['errors'] = array("Log in om gebruik te maken van de wishlist.");
     }
 }
-else {
-     $_SESSION['errors'] = array("Foute url");
-}
+
 header('location:../pages/wishlist.php');
+exit();
+?>

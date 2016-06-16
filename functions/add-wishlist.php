@@ -41,4 +41,6 @@ else {
    $_SESSION['errors'] = array("Er ging iets mis. Probeer opnieuw.");
 }
 
- header('location:../index.php');
+header('location:../index.php');
+exit();
+?>

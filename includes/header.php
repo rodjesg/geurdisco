@@ -149,7 +149,7 @@
                                 <p>
                                     There are currently no items in your shopping bag.
                                 </p>
-                                <a href="<?=$prepath?>pages/shopping-bag.php" class="button">View shopping bag</a>
+                                <a href="<?=$prepath?>pages/shoppingbag.php" class="button">View shopping bag</a>
                             </div>
                         </div>
                         <div class="top-openmobile show-for-small-only">

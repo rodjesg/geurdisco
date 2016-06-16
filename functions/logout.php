@@ -8,5 +8,6 @@
         unset($_SESSION['login']['accountInfo']);
         
         header('location:../index.php');
+        exit();
     }
 ?>
