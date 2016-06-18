@@ -3,8 +3,12 @@
         <div class="product-block">
             <div class="product-thumb" style="background-image:url(<?=$row['ProductImage']?>)">
                 <div class="product-priceblock">
-                    €29.
-                    <div class="decimal">99</div>
+                    <?php
+                    $price = explode(".", $row['Price']);
+                    echo "&euro; ".$price[0];
+                    echo "<div class='decimal'>".$price[1]."</div>";
+                
+                ?>
                 </div>
             </div>
 
