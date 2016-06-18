@@ -19,8 +19,8 @@ Dit word hier ook afgevangen
 // Taking products from the order
 if ($_GET['ProductId']) {
     $productID = $_GET['ProductId'];
-        
-    if ($_GET['quantity'] && is_numeric($_GET['quantity'])) {
+        echo $productID;
+    if (isset($_GET['quantity']) && is_numeric($_GET['quantity'])) {
         $quantity = $_GET['quantity'];
         // replace product quantity
         $_SESSION['shoppingbag'][$productID]['quantity'] = $quantity;
@@ -52,3 +52,4 @@ if ($_GET['ProductId']) {
 
 header('location:'.$_SERVER['HTTP_REFERER']);
 ?>
+;
