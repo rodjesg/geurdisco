@@ -4,6 +4,25 @@ $title = "Product";
 require "../includes/header.php";
 require "../includes/dbconnect.php";
 
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $id = $_GET['id'];
+    $query = "SELECT * FROM product WHERE ProductID = $id";
+    $result = mysqli_query($conn,$query);
+
+    if ($result) {
+        echo "<br/><br/><br/><br/><br/><br/><br/>";
+        $result = $result->fetch_array(true);
+        echo "<pre>";
+        print_r($result);
+        echo "</pre>";
+    }
+    else {
+        header('location:../index.php');
+    }
+}
+else {
+    header('location:../index.php');
+}
 ?>
 
 <style>
@@ -18,8 +37,6 @@ require "../includes/dbconnect.php";
         padding: 5px;
     }
 </style>
-
-Product pagina
 
 <div class="content">
     <div class="container">

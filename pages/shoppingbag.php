@@ -28,10 +28,10 @@ require "../includes/dbconnect.php";
 
                 /* loop through shopping bag */
                 foreach ($_SESSION['shoppingbag'] as $key => $value) {
-                    $price = number_format($value['productInfo']['Price'], 2, ',', '.');
+                    $price = number_format($value['productInfo']['Price'], 2, ',', ' ');
                     $quantity = $value['quantity'];
-                    $productTotal = $price * $quantity;
-                    $subTotal += $productTotal;
+                    $productTotal = number_format($price * $quantity, 2, ',', ' ');
+                    $subTotal += $price * $quantity;
             ?>
                     <tr>
                         <td><img src="<?=$value['productInfo']['ProductImage']?>"></td>
@@ -62,6 +62,7 @@ require "../includes/dbconnect.php";
                 }
 
                 echo "</table>";
+                $subTotal = number_format($subTotal, 2, ',', ' ');
                 echo "<h2>Subtotaal: &euro; $subTotal</h2>";
             }
             else {
