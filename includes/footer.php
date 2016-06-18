@@ -67,6 +67,7 @@
 <script src="<?=$prepath?>assets/js/vendor/jquery.js"></script>
 <script src="<?=$prepath?>assets/js/vendor/what-input.js"></script>
 <script src="<?=$prepath?>assets/js/vendor/foundation.min.js"></script>
+<!--<script src="<?=$prepath?>assets/js/foundation/foundation.equalizer.js"></script>-->
 <script src="<?=$prepath?>assets/js/owl.carousel.js"></script>
 <script src="<?=$prepath?>assets/js/notie.min.js"></script>
 <!-- basic scripts -->
@@ -80,12 +81,13 @@ if(isset($_SESSION['errors'])) {
     unset($_SESSION['errors']);
 }
 ?>
-<script>
-    $(document).ready(function(){
-        $(".loadscreen").fadeOut();
-    });
-</script>
+    <script>
+        $(document).ready(function() {
+            $(".loadscreen").fadeOut();
+        });
 
-</body>
+    </script>
 
-</html>
+    </body>
+
+    </html>

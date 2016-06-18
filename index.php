@@ -48,7 +48,7 @@ include "includes/dbconnect.php";
                     </div>
                 </div>
                 <div class="row owl-carousel products">
-                        <?php
+                    <?php
                         $query = "SELECT * FROM product WHERE CategoryID = 1 ORDER BY ProductID DESC LIMIT 20";
                         $result = mysqli_query($conn,$query);
                         while ($row = $result->fetch_array(true)) {
@@ -61,7 +61,7 @@ include "includes/dbconnect.php";
                 </div>
                 <div class="row">
                     <div class="columns small-12">
-                        <a href="#" class="viewmore">View all products <span class="fa fa-chevron-right"></span></a>
+                        <a href="pages/overview.php?id=1" class="viewmore">View all products <span class="fa fa-chevron-right"></span></a>
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@ include "includes/dbconnect.php";
                 </div>
                 <div class="row">
                     <div class="columns small-12">
-                        <a href="#" class="viewmore">View all products <span class="fa fa-chevron-right"></span></a>
+                        <a href="pages/overview.php?id=2" class="viewmore">View all products <span class="fa fa-chevron-right"></span></a>
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@ include "includes/dbconnect.php";
                 </div>
                 <div class="row">
                     <div class="columns small-12">
-                        <a href="#" class="viewmore">View all products <span class="fa fa-chevron-right"></span></a>
+                        <a href="pages/overview.php?id=3" class="viewmore">View all products <span class="fa fa-chevron-right"></span></a>
                     </div>
                 </div>
 

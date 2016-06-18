@@ -1,8 +1,9 @@
-<div class="columns small-12 medium-6 large-4">
+<div class="columns small-12 medium-6 large-4" data-equalizer-watch>
     <div class="product-block">
         <div class="product-thumb" style="background-image:url(<?=$row['ProductImage']?>)">
             <div class="product-priceblock">
-                €29.<div class="decimal">99</div>
+                €29.
+                <div class="decimal">99</div>
             </div>
         </div>
 
