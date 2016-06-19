@@ -1,12 +1,13 @@
 <?php
 
+
 require "../includes/dbconnect.php";
 
 // PHP code om account credentials in te voeren (account):
 
 //1. check if alle velden zijn ingevuld
-if ($_POST['email'] == "" || $_POST['emailConfirm'] == "" || $_POST['password'] == "" || $_POST['passwordConfirm'] == "" || $_POST['voornaam'] == "" || $_POST['achternaam'] == "" || $_POST['geboortedatum'] == "" || $_POST['adres'] == "" || $_POST['postcode'] == "" || $_POST['huisnr'] == "" || $_POST['woonplaats'] == "" || $_POST['telefoon'] == "") {
-    echo "Niet alle velden zijn ingevuld";
+if ($_POST['email'] == "" || $_POST['emailConfirm'] == "" || $_POST['password'] == "" || $_POST['passwordConfirm'] == "" || $_POST['voornaam'] == "" || $_POST['achternaam'] == "" || $_POST['geboortedatum'] == "" || $_POST['adres'] == "" || $_POST['postcode'] == "" || $_POST['huisnr'] == "" || $_POST['woonplaats'] == "" || $_POST['telefoon'] == "") {   
+echo "niet alle velden zijn ingevuld!";
     die();        
 }
 
@@ -22,7 +23,7 @@ if($_POST["email"] !== $_POST["emailConfirm"]) {
 }
 
 if($_POST["password"] !== $_POST["passwordConfirm"]) {
-    echo "Wachtwoord komt niet met elkaar overeen!";
+  echo "Wachtwoorden komen niet overeen!");
     die();       
 }
 
@@ -35,7 +36,7 @@ $result = mysqli_query($conn,$sql);
 $count = mysqli_num_rows($result);
 
 if ($count > 0){
-    echo "E-mail bestaat al!";
+   echo "email bestaat al!";
     die();
 }
 
@@ -51,10 +52,18 @@ $huisnr = $_POST['huisnr'];
 $huisnrToev = $_POST['huisnrToev'];
 $woonplaats = $_POST['woonplaats'];
 $telefoon = $_POST['telefoon'];
-    
- $sql = "INSERT INTO `account` (`SureName`, `Name`, `Insertion`, `Address`, `Nr`, `Addition`, `PostCode`, `City`, `Phone`, `BirthDate`, `Email`, `Password`) VALUES ('$voornaam','$achternaam','$tussenvoegsel','$adres','$huisnr','$huisnrToev','$postcode','$woonplaats','$telefoon','$geboortedatum','$email','$password');";
+$land = $_POST['land'];
+
+//5. Land omzetten naar CountryID
+$sql = "SELECT `CountryId` FROM `country` WHERE `Name` = '$land';";
+$result = mysqli_query($conn,$sql);
+$land = ($row = $result->fetch_array(true));
+   
+ $sql = "INSERT INTO `account` (`SureName`, `Name`, `Insertion`, `Address`, `Nr`, `Addition`, `PostCode`, `City`, `Phone`, `BirthDate`, `Email`, `Password`,`CountryID`) VALUES ('$voornaam','$achternaam','$tussenvoegsel','$adres','$huisnr','$huisnrToev','$postcode','$woonplaats','$telefoon','$geboortedatum','$email','$password','$land');";
  $result = mysqli_query($conn,$sql);
- echo "Account is succesvol aangemaakt!";
+
+
+header('location:../index.php');
 
 ?>
 
