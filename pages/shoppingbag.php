@@ -39,7 +39,9 @@ require "../includes/dbconnect.php";
                             <?=$value['productInfo']['BrandName']?><br/>
                         </td>
                         <td>
+
                             <input type="hidden" value="<?=$key?>" name="productId" class="hiddenId">
+
                             <select name="quantity">
                                 <?php
                                 for ($i = 0; $i <= $value['productInfo']['Stock']; $i++) {

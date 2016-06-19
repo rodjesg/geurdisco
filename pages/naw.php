@@ -3,10 +3,13 @@ $title = "Account";
 $home = false;
 require "../includes/header.php";
 require "../includes/dbconnect.php";
+<<<<<<< Updated upstream
 
  
 
 
+=======
+>>>>>>> Stashed changes
 ?>
 
 
@@ -107,15 +110,6 @@ require "../includes/dbconnect.php";
      </div>
  </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 <?php
 require "../includes/footer.php";

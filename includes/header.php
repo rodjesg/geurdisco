@@ -101,7 +101,7 @@
                                         <input type="submit" class="button" value="Login">
                                     </form>
                                     <ul>
-                                        <li><a href="#">Create an account</a></li>
+                                        <li><a href="<?=$prepath?>pages/account.php">Create an account</a></li>
                                         <li><a href="#">Lost your password?</a></li>
                                     </ul>
                                     <?php

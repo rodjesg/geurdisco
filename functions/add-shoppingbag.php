@@ -27,7 +27,7 @@ if ($_GET['ProductId']) {
     if (isset($_GET['quantity']) && is_numeric($_GET['quantity'])) {
         $quantity = $_GET['quantity'];
         // replace product quantity
-        $_SESSION['shoppingbag']['products'][$productID]['quantity'] = $quantity;
+        $_SESSION['shoppingbag']['products'][$productID]['quantity'] += $quantity;
     }
     else {
         $quantity = 1;
