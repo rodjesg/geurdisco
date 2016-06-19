@@ -14,6 +14,8 @@
     if(!isset($_SESSION['login'])) {
         $_SESSION['login']['status'] = false;
     }
+    header("Content-Type: text/html; charset=ISO-8859-1");
+
 ?>
 
     <!doctype html>
@@ -39,6 +41,7 @@
         <link rel="stylesheet" href="<?=$prepath?>assets/css/owl.theme.css">
         <!-- theme style -->
         <link rel="stylesheet" href="<?=$prepath?>assets/css/themes/theme-1.css" />
+    
 
     </head>
 
