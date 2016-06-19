@@ -52,9 +52,9 @@ include "includes/dbconnect.php";
                         $query = "SELECT * FROM product WHERE CategoryID = 1 ORDER BY ProductID DESC LIMIT 20";
                         $result = mysqli_query($conn,$query);
                         while ($row = $result->fetch_array(true)) {
-                            echo "<pre>";
-                            print_r($row);
-                            echo "</pre>";
+//                            echo "<pre>";
+//                            print_r($row);
+//                            echo "</pre>";
                             include('includes/product-block.php');
                         }
                         ?>

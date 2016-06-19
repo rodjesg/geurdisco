@@ -16,7 +16,7 @@ if ($_GET['ProductId'] && is_numeric($_GET['ProductId'])) {
     $productID = $_GET['ProductId'];
     // remove product
     if ($_SESSION['shoppingbag'] && is_array($_SESSION['shoppingbag'])) {
-        unset($_SESSION['shoppingbag'][$productID]);
+        unset($_SESSION['shoppingbag']['products'][$productID]);
         $_SESSION['errors'] = array("Product succesvol uit de shopping bag verwijderd.");
     }
 

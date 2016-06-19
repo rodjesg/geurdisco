@@ -6,6 +6,10 @@ require "../includes/dbconnect.php";
 
 if (!isset($_SESSION['shoppingbag'])) {
     $_SESSION['shoppingbag'] = "";
+    $_SESSION['shoppingbag']['products'] = "";
+    $_SESSION['shoppingbag']['personal'] = "";
+    $_SESSION['shoppingbag']['delivery'] = "";
+    $_SESSION['shoppingbag']['payment'] = "";
 }
 
 /**
@@ -23,24 +27,23 @@ if ($_GET['ProductId']) {
     if (isset($_GET['quantity']) && is_numeric($_GET['quantity'])) {
         $quantity = $_GET['quantity'];
         // replace product quantity
-        $_SESSION['shoppingbag'][$productID]['quantity'] = $quantity;
+        $_SESSION['shoppingbag']['products'][$productID]['quantity'] = $quantity;
     }
     else {
         $quantity = 1;
         // increase product quantity
-        $_SESSION['shoppingbag'][$productID]['quantity'] += $quantity;
-
+        $_SESSION['shoppingbag']['products'][$productID]['quantity'] += $quantity;
     }
 
-    if(!isset($_SESSION['shoppingbag'][$productID]['productInfo'])) {
+    if(!isset($_SESSION['shoppingbag']['products'][$productID]['productInfo'])) {
         // get product information
         $query = "SELECT * FROM product INNER JOIN brand ON product.BrandID = brand.BrandID  WHERE product.productID = $productID";
         $result = mysqli_query($conn,$query)->fetch_array(true);
         // add product information to product session
-        $_SESSION['shoppingbag'][$productID]['productInfo'] = $result;
+        $_SESSION['shoppingbag']['products'][$productID]['productInfo'] = $result;
     }
 
-    if ($_SESSION['shoppingbag'][$productID]['quantity'] == 1) {
+    if ($_SESSION['shoppingbag']['products'][$productID]['quantity'] == 1) {
         $_SESSION['errors'] = array("Product succesvol toegevoegd aan de shopping bag.");
     }
     else {

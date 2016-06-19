@@ -1,5 +1,5 @@
 <?php
-$title = "Shopping bag";
+$title = "Shopping bag - Overview";
 $home = false;
 require "../includes/header.php";
 require "../includes/dbconnect.php";
@@ -9,34 +9,35 @@ require "../includes/dbconnect.php";
         <div class="container">
             <!--  Breadcrums menu   -->
             <?php include "../includes/breadcrumbs.php";?>
-
+            <h3><?=$title?></h3>
             <?php
             /* check if session is present */
-            if ($_SESSION['shoppingbag'] && is_array($_SESSION['shoppingbag'])) {
-
-//                echo "<pre>";
-//                print_r($_SESSION);
-//                echo "</pre>";
-//                //die();
-
+            if (isset($_SESSION['shoppingbag']['products']) && is_array($_SESSION['shoppingbag']['products'])) {
                 echo "<table>";
                 echo "<tr>";
-                echo "<th></th><th>Productnaam</th><th>Merk</th><th>Aantal</th><th>Prijs per stuk</th><th>Totaalprijs</th><th>Opties</th>";
+                echo "<th>Product</th><th></th><th>Aantal</th><th>Prijs per stuk</th><th>Totaalprijs</th>";
                 echo "</tr>";
 
                 $subTotal = 0;
+                $countProducts = 0;
 
                 /* loop through shopping bag */
-                foreach ($_SESSION['shoppingbag'] as $key => $value) {
+                foreach ($_SESSION['shoppingbag']['products'] as $key => $value) {
                     $price = number_format($value['productInfo']['Price'], 2, ',', ' ');
                     $quantity = $value['quantity'];
                     $productTotal = number_format($price * $quantity, 2, ',', ' ');
                     $subTotal += $price * $quantity;
+                    $countProducts += $quantity;
             ?>
                     <tr>
-                        <td><img src="<?=$value['productInfo']['ProductImage']?>"></td>
-                        <td><?=$value['productInfo']['ProductName']?></td>
-                        <td><?=$value['productInfo']['BrandName']?></td>
+                        <td>
+                            <img style='width:150px;' src="<?=$value['productInfo']['ProductImage']?>"><br>
+                            <a href="../functions/delete-shoppingbag.php?ProductId=<?=$key?>" class="button">Verwijderen</a>
+                        </td>
+                        <td>
+                            <?=$value['productInfo']['ProductName']?><br/>
+                            <?=$value['productInfo']['BrandName']?><br/>
+                        </td>
                         <td>
                             <input type="hidden" value="<?=$key?>" name="productId" class="hiddenId">
                             <select name="quantity">
@@ -54,32 +55,66 @@ require "../includes/dbconnect.php";
                         </td>
                         <td>&euro; <?=$price?></td>
                         <td>&euro; <?=$productTotal?></td>
-                        <td>
-                            <a href="../functions/delete-shoppingbag.php?ProductId=<?=$key?>" class="button">Verwijderen</a>
-                        </td>
                     </tr>
             <?php
                 }
-
                 echo "</table>";
                 $subTotal = number_format($subTotal, 2, ',', ' ');
-                echo "<h2>Subtotaal: &euro; $subTotal</h2>";
+            ?>
+
+                <!-- shopping bag total block -->
+                <div class="shoppingbag-total">
+                    <?php
+                        if($countProducts == 1) {
+                            $placeholder = "product";
+                        }
+                        else {
+                            $placeholder = "products";
+                        }
+                    ?>
+                    Order (<?=$countProducts?> <?=$placeholder?>)
+                    <hr>
+                    <h4>Discount</h4>
+
+                    <!-- check if discount code is present -->
+                    <?php
+                        if(isset($_SESSION['discountcode']) && !empty($_SESSION['discountcode'])) {
+                            // discount applied: show information
+                    ?>
+                            <a class="button" href="../functions/delete-discount.php">Verwijder discount</a>
+                    <?php
+                        }
+                        else {
+                            // no discount applied: show form
+                    ?>
+                        <form action="../functions/add-discount.php" method="post">
+                            <input type="text" placeholder="Discountcode" name="discountcode">
+                            <input class="button" type="submit" value="Add code">
+                        </form>
+                    <?php
+                        }
+                    ?>
+
+
+                </div>
+
+                <a href="shoppingbag-step2.php" class="button">Next</a>
+            <?php
             }
             else {
                 echo "<p>Geen producten gevonden</p>";
             }
             ?>
-
-
         </div>
     </div>
 
-
-
 <?php
-require "../includes/footer.php";
 
-//var_dump($_SESSION)
+//echo "<pre>";
+//print_r($_SESSION);
+//echo "</pre>";
+
+require "../includes/footer.php";
 ?>
 
 <!-- update quantity test -->
