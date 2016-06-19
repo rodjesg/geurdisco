@@ -24,11 +24,11 @@
             <div class="columns small-12 medium-4">
                 <h4>Footer heading</h4>
                 <ul>
-                    <li><a href="pages/contact.php">Contact</a></li>
-                    <li><a href="pages/contact.php">Contact</a></li>
-                    <li><a href="pages/contact.php">Contact</a></li>
-                    <li><a href="pages/contact.php">Contact</a></li>
-                    <li><a href="pages/contact.php">Contact</a></li>
+                    <li><a href="<?=$prepath?>/pages/account.php">Contact</a></li>
+                    <li><a href="<?=$prepath?>/pages/verzendinfo.php">Shipping info</a></li>
+                    <li><a href="../pages/.php">Contact</a></li>
+                    <li><a href="../pages/account.php">Contact</a></li>
+                    <li><a href="../pages/account.php">Contact</a></li>
                 </ul>
             </div>
 
