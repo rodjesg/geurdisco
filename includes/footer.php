@@ -24,22 +24,22 @@
             <div class="columns small-12 medium-4">
                 <h4>Footer heading</h4>
                 <ul>
-                    <li><a href="<?=$prepath?>/pages/account.php">Contact</a></li>
-                    <li><a href="<?=$prepath?>/pages/verzendinfo.php">Shipping info</a></li>
-                    <li><a href="../pages/.php">Contact</a></li>
-                    <li><a href="../pages/account.php">Contact</a></li>
-                    <li><a href="../pages/account.php">Contact</a></li>
+                    <li><a href="<?=$prepath?>pages/contact.php">Contact</a></li>
+                    <li><a href="<?=$prepath?>pages/verzendinfo.php">Shipping info</a></li>
+                    <li><a href="<?=$prepath?>pages/winkelzoeker.php">Store locator</a></li>
+                    <li><a href="<?=$prepath?>pages/account.php">Contact</a></li>
+                    <li><a href="<?=$prepath?>pages/account.php">Contact</a></li>
                 </ul>
             </div>
 
             <div class="columns small-12 medium-4">
                 <h4>Footer heading</h4>
                 <ul>
-                    <li><a href="#">Footer link</a></li>
-                    <li><a href="#">Footer link</a></li>
-                    <li><a href="#">Footer link</a></li>
-                    <li><a href="#">Footer link</a></li>
-                    <li><a href="#">Footer link</a></li>
+                    <li><a href="<?=$prepath?>pages/account.php">Account</a></li>
+                    <li><a href="<?=$prepath?>pages/contact.php">Contact</a></li>
+                    <li><a href="<?=$prepath?>pages/search.php">Search</a></li>
+                    <li><a href="<?=$prepath?>pages/product.php">Product</a></li>
+                    <li><a href="<?=$prepath?>pages/wishlist.php">Wishlist</a></li>
                 </ul>
             </div>
 
