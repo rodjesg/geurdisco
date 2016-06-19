@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="columns small-12 medium-4">
-                <h4>Footer heading</h4>
+                <h4>Geurdiscounter.nl</h4>
                 <ul>
                     <li><a href="<?=$prepath?>pages/contact.php">Contact</a></li>
                     <li><a href="<?=$prepath?>pages/verzendinfo.php">Shipping info</a></li>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="columns small-12 medium-4">
-                <h4>Footer heading</h4>
+                <h4>Quick links</h4>
                 <ul>
                     <li><a href="<?=$prepath?>pages/account.php">Account</a></li>
                     <li><a href="<?=$prepath?>pages/contact.php">Contact</a></li>
