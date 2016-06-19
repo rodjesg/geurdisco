@@ -65,7 +65,7 @@ require "../includes/dbconnect.php";
                             <label for="Achternaam">Achternaam *</label>	
                             <input type="text" name="achternaam" placeholder="Achternaam"><br>
                             <label for="Geboortedatum">Geboortedatum *</label>	
-                            <input type="text" name="geboortedatum" placeholder="dd-mm-jj"><br>
+                            <input type="text" name="geboortedatum" placeholder="jjjj-mm-dd"><br>
                        <h5>Woonplaats / factuuradres</h5>
                             <label for="adres">Adres *</label>
 				            <input type="text" name="adres" placeholder="Vul je adres in"><br>
@@ -83,7 +83,7 @@ require "../includes/dbconnect.php";
                                 $query = "SELECT * FROM country";
                                 $result = mysqli_query($conn,$query);
                                 while ($row = $result->fetch_array(true)) {
-                                    echo "<option value='".$row['CountryID']."'>".$row['Name']."</option>";
+                                    echo "<option value='".$row['CountryId']."'>".$row['Name']."</option>";
                                 }
                                 ?>
                             </select>            

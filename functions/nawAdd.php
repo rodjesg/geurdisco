@@ -23,7 +23,7 @@ if($_POST["email"] !== $_POST["emailConfirm"]) {
 }
 
 if($_POST["password"] !== $_POST["passwordConfirm"]) {
-  echo "Wachtwoorden komen niet overeen!");
+  echo "Wachtwoorden komen niet overeen!";
     die();       
 }
 
@@ -53,18 +53,13 @@ $huisnrToev = $_POST['huisnrToev'];
 $woonplaats = $_POST['woonplaats'];
 $telefoon = $_POST['telefoon'];
 $land = $_POST['land'];
-
-//5. Land omzetten naar CountryID
-$sql = "SELECT `CountryId` FROM `country` WHERE `Name` = '$land';";
-$result = mysqli_query($conn,$sql);
-$land = ($row = $result->fetch_array(true));
    
  $sql = "INSERT INTO `account` (`SureName`, `Name`, `Insertion`, `Address`, `Nr`, `Addition`, `PostCode`, `City`, `Phone`, `BirthDate`, `Email`, `Password`,`CountryID`) VALUES ('$voornaam','$achternaam','$tussenvoegsel','$adres','$huisnr','$huisnrToev','$postcode','$woonplaats','$telefoon','$geboortedatum','$email','$password','$land');";
  $result = mysqli_query($conn,$sql);
 
+echo "Account succesvol aangemaakt!";
 
 header('location:../index.php');
-
 ?>
 
 
