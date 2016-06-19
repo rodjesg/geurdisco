@@ -2,7 +2,6 @@
 $home = false ;
 $title = "Product";
 require "../includes/header.php";
-require "../includes/dbconnect.php";
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
@@ -100,11 +99,11 @@ else {
                                         <input type="hidden" value="<?=$result['ProductID']?>" name="ProductId">
                                         <select name="quantity">
                                             <?php
-            for ($i = 1; $i <= $result['Stock']; $i++) {
-                echo "<option value='$i'>$i</option>";
-            }
-            echo $quantity;
-            ?>
+                                            for ($i = 1; $i <= $result['Stock']; $i++) {
+                                                echo "<option value='$i'>$i</option>";
+                                            }
+                                            echo $quantity;
+                                            ?>
                                         </select>
                                     </div>
                                 </div>

@@ -2,7 +2,6 @@
 $home = false;
 $title = "Wishlist";
 require "../includes/header.php";
-require "../includes/dbconnect.php";
 ?>
 
 

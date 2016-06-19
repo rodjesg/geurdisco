@@ -2,7 +2,6 @@
 $title = "Shopping bag - Payment";
 $home = false;
 require "../includes/header.php";
-require "../includes/dbconnect.php";
 ?>
 
 <div class="content">

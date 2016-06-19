@@ -2,8 +2,6 @@
 $title = "Account";
 $home = false;
 require "../includes/header.php";
-require "../includes/dbconnect.php";
-
 ?>
 
 

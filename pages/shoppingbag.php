@@ -2,7 +2,6 @@
 $title = "Shopping bag - Overview";
 $home = false;
 require "../includes/header.php";
-require "../includes/dbconnect.php";
 ?>
 
     <div class="content">
@@ -119,7 +118,7 @@ require "../includes/dbconnect.php";
 require "../includes/footer.php";
 ?>
 
-<!-- update quantity test -->
+<!-- update quantity -->
 <script>
     $(document).ready(function(){
         $("select").on("change", function(){

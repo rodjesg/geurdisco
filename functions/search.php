@@ -1,15 +1,4 @@
-<style>
-    .loadscreen {
-        display: none !important;
-    }
-</style>
-
 <?php
-
-//    echo "<pre>";
-//    print_r($_GET['subcategory']);
-//    echo "</pre>";
-//    //die();
 
 if(isset($_GET['searchterm']) && is_string($_GET['searchterm'])) {
    // echo "<br><br><br><br><br><br><br><br>";
@@ -18,11 +7,6 @@ if(isset($_GET['searchterm']) && is_string($_GET['searchterm'])) {
     $result_all = mysqli_query($conn,$query);
     $result_all = $result_all->fetch_all(true);
     $result_filtered = $result_all;
-//
-//    echo "<pre>";
-//    print_r($result_filtered);
-//    echo "</pre>";
-//    //die();
 
     $brands = array();
     $categories = array();
@@ -52,18 +36,6 @@ if(isset($_GET['searchterm']) && is_string($_GET['searchterm'])) {
             $subcategories[$value['SubCategoryID']] = $result;
         }
     }
-
-//    echo "<pre>";
-//    print_r($brands);
-//    echo "</pre>";
-//
-//    echo "<pre>";
-//    print_r($categories);
-//    echo "</pre>";
-//
-//    echo "<pre>";
-//    print_r($subcategories);
-//    echo "</pre>";
 
     if (isset($_GET['brand'])) {
         // filter on brand, remove if not found in array
@@ -117,14 +89,49 @@ if(isset($_GET['searchterm']) && is_string($_GET['searchterm'])) {
             $_SESSION['errors'] = array("Maximumprijs moet hoger zijn dan de minimumprijs.");
         }
     }
-
-    //$result_all;
 }
 else {
     $_SESSION['errors'] = array("Geen zoekterm ingevoerd.");
 }
 
-//echo "<pre>";
-//print_r($result_filtered);
-//echo "</pre>";
+// sort filtered result array
+if (isset($_GET['sort'])) {
+    $sort = $_GET['sort'];
+    echo "sort: ".$sort;
+
+    if ($sort == "product_asc") {
+        // product ascending
+        usort($result_filtered, function($a, $b) {
+            return strcmp($a["ProductName"], $b["ProductName"]);
+        });
+    }
+    else if ($sort == "product_desc") {
+        // product descending
+        usort($result_filtered, function($a, $b) {
+            return strcmp($b["ProductName"], $a["ProductName"]);
+        });
+    }
+    else if ($sort == "price_asc") {
+        // price ascending
+        usort($result_filtered, function($a, $b) {
+            if($a['Price']==$b['Price']) return 0;
+            return $a['Price'] > $b['Price']?1:-1;
+        });
+    }
+    else if ($sort == "price_desc") {
+        // price descending
+        usort($result_filtered, function($a, $b) {
+            if($a['Price']==$b['Price']) return 0;
+            return $a['Price'] < $b['Price']?1:-1;
+        });
+    }
+    else if ($sort == "view") {
+        // price descending
+        usort($result_filtered, function($a, $b) {
+            if($a['View']==$b['View']) return 0;
+            return $a['View'] < $b['View']?1:-1;
+        });
+    }
+}
+
 ?>

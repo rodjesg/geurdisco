@@ -3,7 +3,6 @@ $title = "Overview";
 $homepath; 
 $home = false; 
 require "../includes/header.php";
-require "../includes/dbconnect.php";
 
 /*
 SELECT DISTINCT product.`SubCategoryID`, text.`EN`, text.`NL` FROM product INNER JOIN subcategory ON product.`SubCategoryID` = subcategory.`SubCategoryID` INNER JOIN text ON subcategory.`TextID` = text.`TextID` WHERE CategoryID = 2;
