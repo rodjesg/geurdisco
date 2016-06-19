@@ -64,7 +64,7 @@
                     <div class="top-right">
                         <!-- search -->
                         <div class="search-desktop show-for-large">
-                            <form method="post" method="post" action="<?=$prepath?>pages/search.php">
+                            <form method="get" action="<?=$prepath?>pages/search.php">
                                 <input name="searchterm" type="search" placeholder="I'm searching">
                                 <button type="submit" class="fa fa-search"></button>
                             </form>
@@ -75,7 +75,7 @@
                             <div class="fa fa-search toggle"></div>
                             <div class="search-container-mobile dropdown-container">
                                 <h5>Find your product</h5>
-                                <form action="<?=$prepath?>/functions/search.php">
+                                <form method="get" action="<?=$prepath?>/pages/search.php">
                                     <input name="searchterm" type="search" placeholder="I'm searching">
                                     <input type="submit" class="button" value="Search">
                                 </form>

@@ -18,7 +18,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $result = mysqli_query($conn,$query);
     if (!$result) {
         // if no results in database
-        header('location:index.php');
+        header('location:../index.php');
     }
     
     // get subcategories
@@ -32,7 +32,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 }
 else {
     // redirect to home if id not present
-    header('location:index.php');
+    header('location:../index.php');
 }
 
 ?>
@@ -64,15 +64,12 @@ else {
                     <div class="large-4 columns">
                         <h3>Catagories</h3>
                         <div class="block1Overview">
-
                             <?php
                             while ($row = $result2->fetch_array(true)) {            
                                     echo "<a href='search.php?category=".$categoryId."&subcategory=".$row['SubCategoryID']."' class='button buttonOverview'>".$row['EN']."</a>";
                                 }
                             ?>
                         </div>
-
-
                     </div>
                     <div class="large-8 columns">
                         <img class="productimg" src="http://dummyimage.com/750x150/000000/fff" title="productview">
@@ -80,7 +77,7 @@ else {
                         <div class="row products">
                             <?php
                             while ($row = $result->fetch_array(true)) {
-                                    include($prepath.'includes/product-block-results.php');
+                                    include($prepath.'includes/product-block-overview.php');
                                 }
                             ?>
                         </div>
