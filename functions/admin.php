@@ -25,12 +25,11 @@ if ($count==1) {
     // create login sessions
     $_SESSION['login']['status'] = true;
     $_SESSION['login']['accountInfo'] = $accountInfo;
-    echo "Inloggen gelukt!";
+    header('location:../admin/admin.php');
 } else {
     echo "Inloggen mislukt!";
 }
 
-header('location:../index.php');
 exit();
 
 ?>
