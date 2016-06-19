@@ -118,6 +118,7 @@
                                             <strong><?=$_SESSION['login']['accountInfo']['Email']?></strong>
                                         </p>
                                         <ul>
+                                            <li><a href="<?=$prepath?>pages/orderhistory.php">Order history</a></li>
                                             <li><a href="<?=$prepath?>functions/logout.php">Logout</a></li>
                                         </ul>
                                         <?php
