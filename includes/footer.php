@@ -27,8 +27,8 @@
                     <li><a href="<?=$prepath?>pages/contact.php">Contact</a></li>
                     <li><a href="<?=$prepath?>pages/verzendinfo.php">Shipping info</a></li>
                     <li><a href="<?=$prepath?>pages/winkelzoeker.php">Store locator</a></li>
-                    <li><a href="<?=$prepath?>pages/account.php">Contact</a></li>
-                    <li><a href="<?=$prepath?>pages/account.php">Contact</a></li>
+                    <li><a href="<?=$prepath?>pages/account.php">Support</a></li>
+                    <li><a href="<?=$prepath?>pages/account.php">Register</a></li>
                 </ul>
             </div>
 
@@ -37,8 +37,8 @@
                 <ul>
                     <li><a href="<?=$prepath?>pages/account.php">Account</a></li>
                     <li><a href="<?=$prepath?>pages/contact.php">Contact</a></li>
-                    <li><a href="<?=$prepath?>pages/search.php">Search</a></li>
                     <li><a href="<?=$prepath?>pages/product.php">Product</a></li>
+                    <li><a href="<?=$prepath?>pages/overview.php">Overview</a></li>
                     <li><a href="<?=$prepath?>pages/wishlist.php">Wishlist</a></li>
                 </ul>
             </div>

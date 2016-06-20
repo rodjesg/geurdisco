@@ -23,19 +23,17 @@ require "../includes/header.php";
                 <div class="row">
                     <div class="large-4 columns">
 
-                        <p><address>
+                        <address>
                 <strong>Geurdiscounter.nl</strong><br>
   Hogeschoollaan  1 <br>
     4818 CR Breda, Noord Brabant, NL <br>
-                        </address></p>
+                        </address>
 
                         <address>
   <strong>Geurdiscounter.nl</strong><br>
   <a href="mailto:info@geurdiscounter.nl">info@geurdiscounter.nl</a>
 </address>
                     </div>
-
-
 
                     <script src="http://maps.googleapis.com/maps/api/js"></script>
                     <script>
