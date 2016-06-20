@@ -292,6 +292,19 @@
         background: rgba(255,255,255, 1);
     }
 
+    .menu-thumb {
+        width: 100%;
+        height: 250px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('../img/img-placeholder.png');
+    }
+    /* menu thumb category men*/
+    .menu-thumb._2 {
+    background-image: url('../img/menu-men.jpg');
+    }
+
 }
 
 /* min-width 641px, medium screens */

@@ -204,7 +204,7 @@
                                             </ul>
                                         </div>
                                         <div class="columns medium-4">
-                                            <img src="<?=$prepath?>assets/img/img-placeholder">
+                                            <div class="menu-thumb _<?=$row['CategoryID']?>"></div>
                                         </div>
                                     </div>
                                 </div>
