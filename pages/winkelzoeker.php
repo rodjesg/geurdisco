@@ -5,18 +5,13 @@ $homepath;
 $home = false; 
 require "../includes/header.php";
 ?>
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
 
     <style>
         #googleMap {
             margin: auto;
             padding: auto;
-        }
-        
-        .buttonContact {
-            display: block;
-            width: 50%;
-            align-content: center;
+            width: 750px;
+            height: 350px;
         }
 
     </style>
@@ -25,23 +20,48 @@ require "../includes/header.php";
         <div class="container">
             <!--  Breadcrums menu   -->
             <?php include "../includes/breadcrumbs.php";?>
+
+                <script src="http://maps.googleapis.com/maps/api/js"></script>
                 <script>
+                    var myLocation = new google.maps.LatLng(51.58378, 4.79698);
+
                     function initialize() {
                         var mapProp = {
-                            center: new google.maps.LatLng(51.583799, 4.796982),
+                            center: myLocation,
                             zoom: 15,
+                            scrollwheel: false,
+                            draggable: false,
                             mapTypeId: google.maps.MapTypeId.ROADMAP
                         };
+
                         var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+                        var marker = new google.maps.Marker({
+                            position: myLocation,
+                        });
+
+                        marker.setMap(map);
                     }
+
                     google.maps.event.addDomListener(window, 'load', initialize);
 
                 </script>
-                <div id="googleMap" style="width:750px;height:380px;"></div>
+
+                <p><address>
+                <strong>Geurdiscounter.nl</strong><br>
+  Hogeschoollaan  1 <br>
+    4818 CR Breda, Noord Brabant, NL <br>
+                        </address></p>
+
+                <address>
+  <strong>Geurdiscounter.nl</strong><br>
+  <a href="mailto:info@geurdiscounter.nl">info@geurdiscounter.nl</a>
+</address>
+
+                <div id="googleMap" style=""></div>
+
         </div>
     </div>
-
-
     <?php
 require "../includes/footer.php";
 ?>

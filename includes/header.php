@@ -43,7 +43,7 @@
         <link rel="stylesheet" href="<?=$prepath?>assets/css/owl.theme.css">
         <!-- theme style -->
         <link rel="stylesheet" href="<?=$prepath?>assets/css/themes/theme-1.css" />
-    
+
 
     </head>
 
@@ -182,40 +182,40 @@
                         while($row = $result->fetch_array(true)) {
                         ?>
 
-                        <li class="submenu-section">
-                            <a href="<?=$prepath?>pages/overview.php?id=<?=$row['CategoryID']?>" class="submenu-section-item">
-                                <?=$row['EN']?>
-                            </a>
-                            <div class="submenu-container">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="columns medium-8">
-                                            <?php
+                            <li class="submenu-section">
+                                <a href="<?=$prepath?>pages/overview.php?id=<?=$row['CategoryID']?>" class="submenu-section-item">
+                                    <?=$row['EN']?>
+                                </a>
+                                <div class="submenu-container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="columns medium-8">
+                                                <?php
                                                 $sql2 = "SELECT DISTINCT `EN`,`NL`, product.`SubCategoryID` FROM product INNER JOIN subcategory ON product.SubCategoryID = subcategory.SubCategoryID INNER JOIN text ON subcategory.TextID = text.TextID WHERE product.CategoryID = ".$row['CategoryID'];
                                                 $result2 = mysqli_query($conn,$sql2);
                                             ?>
-                                            <h4>Categories</h4>
-                                            <ul>
-                                                <?php
+                                                    <h4>Categories</h4>
+                                                    <ul>
+                                                        <?php
                                                     while($row2 = $result2->fetch_array(true)) {
                                                         echo " <li><a href='".$prepath."pages/search.php?byCategory=".$row['CategoryID']."&bySubcategory=".$row2['SubCategoryID']."'>".$row2['EN']."</a></li>";
                                                     }
                                                 ?>
-                                            </ul>
-                                        </div>
-                                        <div class="columns medium-4">
-                                            <img src="<?=$prepath?>assets/img/img-placeholder">
+                                                    </ul>
+                                            </div>
+                                            <div class="columns medium-4">
+                                                <div class='overview-thumb <?=$id?>'> <img src="<?=$prepath?>assets/img/img-placeholder"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
 
-                        <?php
+                            <?php
                         }
                         ?>
 
-                        <li class="show-for-small-only"><a href="#">Wishlist</a></li>
+                                <li class="show-for-small-only"><a href="#">Wishlist</a></li>
                     </ul>
                 </div>
             </div>
