@@ -151,11 +151,30 @@
                                 <div class="fa fa-chevron-down hide-for-small-only"></div>
                             </div>
                             <div class="shoppingbag-container dropdown-container">
-                                <h5>Shopping bag</h5>
-                                <p>
-                                    There are currently no items in your shopping bag.
-                                </p>
-                                <a href="<?=$prepath?>pages/shoppingbag.php" class="button">View shopping bag</a>
+                                <div class="shoppingbag-wrapper">
+                                    <h5>Shopping bag</h5>
+                                    <?php
+                                    $shoppingbagItems = 0;
+                                    if (isset($_SESSION['shoppingbag']) && is_array($_SESSION['shoppingbag']) && !empty($_SESSION['shoppingbag'])) {
+                                        // loop through shopping bag
+                                        echo "<table>";
+                                        foreach ($_SESSION['shoppingbag']['products'] as $key => $value) {
+                                            echo "<tr>";
+                                            echo "<td><a href='".$prepath."pages/product?id=".$key."'><img style='width:50px;' src='".$value['productInfo']['ProductImage']."'></a></td>";
+                                            echo "<td><a href='".$prepath."pages/product?id=".$key."'>".$value['productInfo']['ProductName']."</a></td>";
+                                            echo "<td><a href='".$prepath."pages/product?id=".$key."'>".$value['quantity']."</a></td>";
+                                            echo "</tr>";
+
+                                            $shoppingbagItems += $value['quantity'];
+                                        }
+                                        echo "</table>";
+                                    }
+                                    ?>
+
+                                    <p>There are currently <strong><?=$shoppingbagItems?></strong> items in your shopping bag.</p>
+
+                                    <a href="<?=$prepath?>pages/shoppingbag.php" class="button">View shopping bag</a>
+                                </div>
                             </div>
                         </div>
                         <div class="top-openmobile show-for-small-only">

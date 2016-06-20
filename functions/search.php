@@ -1,8 +1,3 @@
-<style>
-    .loadscreen {
-        display: none !important;
-    }
-</style>
 <?php
 
 if(isset($_GET['searchterm']) && is_string($_GET['searchterm']) || isset($_GET['byCategory']) && is_numeric($_GET['byCategory']) && isset($_GET['bySubcategory']) && is_numeric($_GET['bySubcategory'])) {

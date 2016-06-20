@@ -92,6 +92,14 @@
     .dropdown-container h5 {
         margin-bottom: 15px;
     }
+    .dropdown-container.shoppingbag-container {
+        padding: 0;
+    }
+    .dropdown-container .shoppingbag-wrapper {
+        max-height: 450px;
+        overflow-y: auto;
+        padding: 15px;
+    }
     .search-mobile, .top-login, .top-wishlist, .top-shoppingbag, .top-openmobile {
         float: left;
         cursor: pointer;
