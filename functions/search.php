@@ -1,16 +1,41 @@
+<style>
+    .loadscreen {
+        display: none !important;
+    }
+</style>
 <?php
 
-if(isset($_GET['searchterm']) && is_string($_GET['searchterm'])) {
+if(isset($_GET['searchterm']) && is_string($_GET['searchterm']) || isset($_GET['byCategory']) && is_numeric($_GET['byCategory']) && isset($_GET['bySubcategory']) && is_numeric($_GET['bySubcategory'])) {
    // echo "<br><br><br><br><br><br><br><br>";
-    $searchterm = $_GET['searchterm'];
-    $query = "SELECT * FROM product WHERE ProductName LIKE '%$searchterm%'";
+
+    if (!isset($_GET['searchterm'])) {
+        // search by category
+        $byCategory = $_GET['byCategory'];
+        $bySubcategory = $_GET['bySubcategory'];
+        $query = "SELECT * FROM product WHERE CategoryID = $byCategory AND SubCategoryID = $bySubcategory";
+       // die();
+    }
+    else {
+        // search by searchterm
+        $searchterm = $_GET['searchterm'];
+        $query = "SELECT * FROM product WHERE ProductName LIKE '%$searchterm%'";
+    }
+
+
     $result_all = mysqli_query($conn,$query);
     $result_all = $result_all->fetch_all(true);
+
+//    echo "<pre>";
+//    print_r($result_all);
+//    echo "<pre>";
+   // die();
+
     $result_filtered = $result_all;
 
     $brands = array();
     $categories = array();
     $subcategories = array();
+
     foreach ($result_all as $key => $value) {
         // get brands
         if(!isset($brands[$value['BrandID']])) {

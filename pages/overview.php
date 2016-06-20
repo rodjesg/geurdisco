@@ -13,7 +13,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $categoryId = $_GET['id'];
     
     
-    $query = "SELECT * FROM product WHERE CategoryID = $categoryId ORDER BY ProductID DESC LIMIT 100";
+    $query = "SELECT * FROM product WHERE CategoryID = $categoryId ORDER BY ProductID DESC LIMIT 25";
     $result = mysqli_query($conn,$query);
     if (!$result) {
         // if no results in database
@@ -21,7 +21,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     }
     
     // get subcategories
-    
      $query2 = "SELECT DISTINCT product.`SubCategoryID`, text.`EN`, text.`NL` FROM product INNER JOIN subcategory ON product.`SubCategoryID` = subcategory.`SubCategoryID` INNER JOIN text ON subcategory.`TextID` = text.`TextID` WHERE CategoryID = $categoryId";
   
     //echo $query2;
@@ -65,7 +64,7 @@ else {
                         <div class="block1Overview">
                             <?php
                             while ($row = $result2->fetch_array(true)) {            
-                                    echo "<a href='search.php?category=".$categoryId."&subcategory=".$row['SubCategoryID']."' class='button buttonOverview'>".$row['EN']."</a>";
+                                    echo "<a href='search.php?byCategory=".$categoryId."&bySubcategory=".$row['SubCategoryID']."' class='button buttonOverview'>".$row['EN']."</a>";
                                 }
                             ?>
                         </div>

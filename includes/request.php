@@ -1,21 +1,19 @@
-<?php
-$title = "Account";
-$home = false;
-require "../includes/header.php";
-require "../includes/dbconnect.php";
-$searchterm = test ;
-?>
-
-
-
-
-
 <div class="content">
      <div class="container">
          <div class="row">
              <div class="large-12 columns "> 
                  
+                 <!-- Request question -->
+                 <div class="request-box">
+                   <h2>Wilt u een offerte aanvragen?</h2>
+                       <div class="button"><span>&nbsp;Ja</span></div>
+                       <div class="button"><span>&nbsp;Nee</span></div>
+                    </div>
+                 
+                 <!-- Ik wil nu als Ja klikt, dat dan de php volgt. Als je Nee klikt dan terug naar de hoofdpagina. Hoe doe je dat? -->
+                 
                   <?php
+                       
                     if (isset($_SESSION['login']) && $_SESSION['login']['status'] == true) {
                         
                         echo "<h3>".$_SESSION['login']['accountInfo']['SureName']."'s Offerte aanvraag</h3>";
@@ -37,51 +35,14 @@ $searchterm = test ;
                         
                         //echo $message ;
                         $headers =  'MIME-Version: 1.0' . "\r\n"; 
-                        $headers .= 'From: Your name <info@geurdiscounter.nl>' . "\r\n";
+                        $headers .= 'From: GeurDiscounter <info@geurdiscounter.nl>' . "\r\n";
                         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
                         
                         $mail = $_SESSION['login']['accountInfo']['Email'];
+                        $mail = "bram@bramdehart.nl";
                         mail($mail, 'Offerte aanvraag GeurDiscounter', $message, $headers) ;
                         
-                        ?>
-                        
-                        
-                        
-                        
-                        <?php
-                        /*
-// The message
-$message = "Line 1\r\nLine 2\r\nLine 3";
-
-// In case any of our lines are larger than 70 characters, we should use wordwrap()
-$message = wordwrap($message, 70, "\r\n");
-
-// Send
-mail('caffeinated@example.com', 'My Subject', $message);
-?>
-                 
-                 <?php
-$to      = 'nobody@example.com';
-$subject = 'the subject';
-$message = 'hello';
-$headers = 'From: webmaster@example.com' . "\r\n" .
-    'Reply-To: webmaster@example.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
-
-mail($to, $subject, $message, $headers);
-?>
             
-                         /*                   
-                        // check if account has request product
-                        if ($result->num_rows == 0) {
-                            echo "<p>Je hebt nog geen producten aan je offerte toegevoegd.</p>";
-                        }
-                        // if has products, loop through each
-                        else {
-                            while ($row = $result->fetch_array(true)) {
-                                include($prepath.'includes/product-block-wishlist.php');
-                            }
-                        }*/
                     }
                     else {
                         echo "<h3>Offerte aanvraag</h3>";
@@ -97,8 +58,4 @@ mail($to, $subject, $message, $headers);
         </div>
     </div>
 </div>
-
-<?php
-require "../includes/footer.php";
-?>
 

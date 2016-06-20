@@ -189,30 +189,17 @@
                             <div class="submenu-container">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="columns medium-4">
+                                        <div class="columns medium-8">
                                             <?php
-                                                $sql2 = "SELECT DISTINCT `EN`,`NL` FROM product INNER JOIN subcategory ON product.SubCategoryID = subcategory.SubCategoryID INNER JOIN text ON subcategory.TextID = text.TextID WHERE product.CategoryID = ".$row['CategoryID'];
+                                                $sql2 = "SELECT DISTINCT `EN`,`NL`, product.`SubCategoryID` FROM product INNER JOIN subcategory ON product.SubCategoryID = subcategory.SubCategoryID INNER JOIN text ON subcategory.TextID = text.TextID WHERE product.CategoryID = ".$row['CategoryID'];
                                                 $result2 = mysqli_query($conn,$sql2);
                                             ?>
                                             <h4>Categories</h4>
                                             <ul>
                                                 <?php
                                                     while($row2 = $result2->fetch_array(true)) {
-                                                        echo " <li><a href='#'>".$row2['EN']."</a></li>";
+                                                        echo " <li><a href='".$prepath."pages/search.php?byCategory=".$row['CategoryID']."&bySubcategory=".$row2['SubCategoryID']."'>".$row2['EN']."</a></li>";
                                                     }
-                                                ?>
-                                            </ul>
-                                        </div>
-                                        <div class="columns medium-4">
-                                            <h4>Brands</h4>
-                                            <ul>
-                                                <?php
-                                                $sql3 = "SELECT DISTINCT `BrandName` FROM product INNER JOIN brand ON product.BrandID = brand.BrandID  WHERE product.CategoryID = ".$row['CategoryID']." LIMIT 10";
-                                                $result3 = mysqli_query($conn,$sql3);
-
-                                                while($row3 = $result3->fetch_array(true)) {
-                                                    echo " <li><a href='#'>".$row3['BrandName']."</a></li>";
-                                                }
                                                 ?>
                                             </ul>
                                         </div>
