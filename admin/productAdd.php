@@ -1,3 +1,9 @@
+<?php
+
+require '../includes/dbconnect.php';
+
+?>
+
 <!doctype html>
 
 <html>
@@ -98,7 +104,10 @@ input[type=text]:focus {
 		<title>Admin</title>
 	</head>
 	
-	<body><header><h1>Beheersysteem Geurdiscounter.nl -- Product toevoegen</h1></header>
+	<body>
+        <header>
+            <h1>Beheersysteem Geurdiscounter.nl -- Product toevoegen</h1>
+        </header>
         
 		
 		<aside>
@@ -110,9 +119,8 @@ input[type=text]:focus {
 		</aside>
 
 		<main>
-            
-            
-            <div class="form"><form class="ProductToevoegen" action="../functions/addProduct.php" method="post">
+            <div class="form">
+                <form class="ProductToevoegen" action="../functions/addProduct.php" method="post">
 				    <fieldset>
                        <h3>Product toevoegen</h3>
                             <label for="product naam">Product naam:</label><br>
@@ -129,7 +137,7 @@ input[type=text]:focus {
                             <input type="text" name="Voorraad"><br>
                             <label for="merk">Merk: </label><br>
                             <select>
-                                  <?php
+                              <?php
                                 $query = "SELECT * FROM brand;";
                                 $result = mysqli_query($conn,$query);
                                 while ($row = $result->fetch_array(true)) {
