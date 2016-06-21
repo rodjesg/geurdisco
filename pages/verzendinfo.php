@@ -7,16 +7,35 @@ require "../includes/header.php";
 ?>
 
     <style>
-        .block1Contact {
-            border: 1px solid;
-            border-width: 1px;
-            padding: 12px 20px;
+        table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 2px;
+            border-color: gray;
         }
         
-        .buttonContact {
-            display: block;
-            width: 50%;
-            align-content: center;
+        .truck1 {
+            color: green;
+        }
+        
+        .truck2 {
+            color: orange;
+        }
+        
+        .truck3 {
+            color: orange;
+        }
+        
+        .truck4 {
+            color: orange;
+        }
+        
+        .truck5 {
+            color: red;
+        }
+        
+        .truck6 {
+            color: blue;
         }
 
     </style>
@@ -27,24 +46,60 @@ require "../includes/header.php";
             <!--  Breadcrums menu   -->
             <?php include "../includes/breadcrumbs.php";?>
 
-                <h2>Shipping & Returns</h2>
+                <h3>Verzending en bezorging</h3>
+                <p>Voor het bezorgen van uw bestelling maken wij gebruik van PostNL. Indien u niet aanwezig bent, biedt de bezorger van PostNL het pakket op een ander moment nogmaals aan en/of laat een kaartje bij u achter. U kunt vervolgens contact opnemen met PostNL om aan te geven hoe en wanneer u uw bestelling alsnog wenst te ontvangen. Het is ook mogelijk dat het pakket bij de buren wordt afgeleverd. Dit wordt dan aangegeven op het kaartje in uw brievenbus. Bent u bij meerdere pogingen tot bezorging niet aanwezig, dan wordt het pakket retour gezonden naar ons magazijn. PostNL bezorgt van dinsdag tot en met zaterdag. Online bestellingen worden gratis naar u verzonden.</p>
+                <br>
+                <p>Bent u benieuwd naar de status van uw levering of binnen welk tijdsbestek uw pakket wordt geleverd? Kijk dan op <a href="https://jouw.postnl.nl">jouw.post.nl</a>, vul uw track and trace code of niet-thuis code in en de postcode die u heeft opgegeven bij het plaatsen van uw bestelling. U kunt hier de actuele status van uw levering 24 uur per dag bekijken.</p>
+                <br>
+                <h3>Levertijden</h3>
+                <p>Onderstaande tabel geeft d.m.v. de gekleurde vrachtwagen-icoontjes weer wat de verwachte levertijd van een product is.</p>
+                <table>
+                    <tr>
+                        <th>LEVERING </th>
+                        <th> LEVERTIJDEN </th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-truck truck1" aria-hidden="true"></i></td>
+                        <td> Direct leverbaar </td>
+                        <td>2-5 werkdagen </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-truck truck2" aria-hidden="true"></i></td>
+                        <td>Levertijd 6 tot 8 werkdagen</td>
+                        <td>De verwachte levertijd bedraagt 6 tot 8 werkdagen</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-truck truck3" aria-hidden="true"></i></td>
+                        <td>Levertijd 8 tot 10 werkdagen</td>
+                        <td>De verwachte levertijd bedraagt 8 tot 10 werkdagen</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-truck truck4" aria-hidden="true"></i></td>
+                        <td>Levertijd langer dan 10 werkdagen</td>
+                        <td> De verwachte levertijd bedraagt langer dan10 werkdagen</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-truck truck5" aria-hidden="true"></i></td>
+                        <td>Helaas uitverkocht</td>
+                        <td>Momenteel niet leverbaar</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-truck truck6" aria-hidden="true"></i></td>
+                        <td>NIEUW in assortiment!</td>
+                        <td>2-5 werkdagen, indien anders is dat aangegeven</td>
+                    </tr>
+                </table>
+                <h3>Verzendkosten</h3>
+                <p>De verpakkings- en verzendkosten in Nederland bedragen minimaal € 4,95 per pakket met 1 of meer artikel(en) tenzij anders vermeld en zijn voor rekening van de klant. Dit betreft bestellingen die worden gedaan via ons Callcenter. Bestelt u online? Dan profiteert u van gratis verzending! Bij bezorging buiten Nederland worden tijdens het bestelproces de juiste verzendkosten berekend. Deze kosten liggen te allen tijde hoger dan de verzendkosten binnen Nederland.</p>
 
-                <h3>FREE ECONOMY SHIPPING</h3>
+                <h3>Het artikel is niet op voorraad:</h3>
+                <p>Mits het bestelde artikel op voorraad is, wordt uw bestelling de volgende werkdag voor verzending aangeboden aan PostNL. Vervolgens wordt uw bestelling binnen circa 2-5 werkdagen bij u aangeboden. Is een artikel (nog) niet op voorraad, dan kunt u op onze website de verwachte levertijd opzoeken bij het betreffende artikel. De actuele status van onze voorraad en daarmee samenhangende levertijd communiceren onze agents van het CallCenter met u tijdens uw telefonische bestelling. Voor bestellingen die via onze website worden geplaatst, is een eventueel afwijkende levertijd per artikel zichtbaar op de website. Heeft uw bestelde artikel de status 'Op voorraad'? Dan kunt u uw pakket binnen 2-5 werkdagen verwachten. Heeft u meerdere artikelen besteld met diverse voorraadstatussen? Dan volgt de levering zodra alle artikelen uit uw bestelling voorradig zijn. Mocht dit door onvoorziene omstandigheden langer duren, dan wordt u hierover geïnformeerd via onze klantenservice. U ontvangt uw bestelling later, danwel in 2 afzonderlijke zendingen.</p>
 
-                <p>Free ECONOMY Shipping offer applies to all orders over $75. Overweight and/or oversize shipping surcharges are assessed on a per item basis, and still apply regardless of order total or Free Shipping promotion.</p>
 
-                <h3>SHIPPING TIMES </h3>
+                <h3>Vertraging tijdens verzending:</h3>
 
-                <p>Most orders placed before 11:00 a.m. E.S.T. are shipped the same business day, (Monday through Friday). Standard shipping time frame for orders is 4 - 10 business days. Please note that our shipping carriers do not deliver on Saturdays or Sundays. For instance, Next Day orders placed before 11:00am E.S.T. on a Friday are not delivered until the next business day, Monday. Please enter a full street address on your order as we cannot ship to a P.O. Box. *Please note that there will be a $12.75 service fee for address corrections </p>
-
-                <h3>SHIPPING RATES </h3>
-                <p>Most Ground shipping orders within the contiguous 48 states are at flat rate of $8.99 (exclusions apply). Next Day and 2nd Day Air shipping options are available on most orders (exclusions apply). Alaska/Hawaii orders are an additional shipping cost. Please call us toll-free for pricing at 1-800-8033 between 7:00am and 5:30pm, PST. *UPS Ground is only available in the 48 contiguous states.</p>
-
-                <h3>REFUSED SHIPMENTS/UNDELIVERABLE PACKAGE </h3>
-                <p>If you refuse a package upon arrival or your package is undeliverable due to customer error, we must charge your card for the shipping cost and shipper fee caused by your decision.</p>
-                <h3>CANCELING AN ORDER</h3>
-                <p>In most cases, once an order is placed, we are not able to cancel the order due to the speed in which we process and ship orders . If you no longer want a product after the order has been placed, please contact us for a Return Merchandise Authorization via email or telephone once you have received the product. Unauthorized returns/refused shipments will not be accepted or credited.</p>
-
+                <p>Ons streven is uw bestelling binnen 2-5 werkdagen te bezorgen, indien uw bestelde artikel(en) voorradig zijn. Via de track and trace code die u ontvangt via e-mail (zodra uw pakket ons magazijn verlaat), volgt u de status van uw zending. Afhankelijk van de verwerking van PostNL, kan het enkele uren tot 24 uur duren voor uw pakketstatus zichtbaar is. Indien u uw pakket nog niet heeft ontvangen, controleert u dan eerst via de track and trace code de status van de levering en wacht deze af. Wellicht is uw pakket bij de buren bezorgd of heeft de bezorger u niet thuis getroffen en volgt er een nieuw bezorgmoment. Heeft u na enkele dagen nog geen pakket ontvangen en is de track and trace informatie niet toereikend? Neemt u dan contact op met onze klantenservice via de link onderaan de website 'Klantenservice’ of bel 088-746 1000 (lokaal tarief). Wij helpen u dan graag verder.</p>
 
 
 
