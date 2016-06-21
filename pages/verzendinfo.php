@@ -91,15 +91,22 @@ require "../includes/header.php";
                     </tr>
                 </table>
                 <h3>Verzendkosten</h3>
+
                 <p>De verpakkings- en verzendkosten in Nederland bedragen minimaal € 4,95 per pakket met 1 of meer artikel(en) tenzij anders vermeld en zijn voor rekening van de klant. Dit betreft bestellingen die worden gedaan via ons Callcenter. Bestelt u online? Dan profiteert u van gratis verzending! Bij bezorging buiten Nederland worden tijdens het bestelproces de juiste verzendkosten berekend. Deze kosten liggen te allen tijde hoger dan de verzendkosten binnen Nederland.</p>
 
                 <h3>Het artikel is niet op voorraad:</h3>
+
                 <p>Mits het bestelde artikel op voorraad is, wordt uw bestelling de volgende werkdag voor verzending aangeboden aan PostNL. Vervolgens wordt uw bestelling binnen circa 2-5 werkdagen bij u aangeboden. Is een artikel (nog) niet op voorraad, dan kunt u op onze website de verwachte levertijd opzoeken bij het betreffende artikel. De actuele status van onze voorraad en daarmee samenhangende levertijd communiceren onze agents van het CallCenter met u tijdens uw telefonische bestelling. Voor bestellingen die via onze website worden geplaatst, is een eventueel afwijkende levertijd per artikel zichtbaar op de website. Heeft uw bestelde artikel de status 'Op voorraad'? Dan kunt u uw pakket binnen 2-5 werkdagen verwachten. Heeft u meerdere artikelen besteld met diverse voorraadstatussen? Dan volgt de levering zodra alle artikelen uit uw bestelling voorradig zijn. Mocht dit door onvoorziene omstandigheden langer duren, dan wordt u hierover geïnformeerd via onze klantenservice. U ontvangt uw bestelling later, danwel in 2 afzonderlijke zendingen.</p>
 
 
                 <h3>Vertraging tijdens verzending:</h3>
 
                 <p>Ons streven is uw bestelling binnen 2-5 werkdagen te bezorgen, indien uw bestelde artikel(en) voorradig zijn. Via de track and trace code die u ontvangt via e-mail (zodra uw pakket ons magazijn verlaat), volgt u de status van uw zending. Afhankelijk van de verwerking van PostNL, kan het enkele uren tot 24 uur duren voor uw pakketstatus zichtbaar is. Indien u uw pakket nog niet heeft ontvangen, controleert u dan eerst via de track and trace code de status van de levering en wacht deze af. Wellicht is uw pakket bij de buren bezorgd of heeft de bezorger u niet thuis getroffen en volgt er een nieuw bezorgmoment. Heeft u na enkele dagen nog geen pakket ontvangen en is de track and trace informatie niet toereikend? Neemt u dan contact op met onze klantenservice via de link onderaan de website 'Klantenservice’ of bel 088-746 1000 (lokaal tarief). Wij helpen u dan graag verder.</p>
+
+                <h3>Het artikel is niet meer leverbaar:</h3>
+
+                <p>Als wij een betaling hebben ontvangen voor één of meer producten, en het blijkt dat een bepaald artikel niet meer leverbaar is, dan storten wij het geld van dit artikel zo spoedig mogelijk terug op uw bankrekening.</p>
+
 
 
 

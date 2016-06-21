@@ -171,9 +171,9 @@
                                     }
                                     ?>
 
-                                    <p>There are currently <strong><?=$shoppingbagItems?></strong> items in your shopping bag.</p>
+                                        <p>There are currently <strong><?=$shoppingbagItems?></strong> items in your shopping bag.</p>
 
-                                    <a href="<?=$prepath?>pages/shoppingbag.php" class="button">View shopping bag</a>
+                                        <a href="<?=$prepath?>pages/shoppingbag.php" class="button">View shopping bag</a>
                                 </div>
                             </div>
                         </div>
@@ -213,14 +213,14 @@
                                                 $sql2 = "SELECT DISTINCT `EN`,`NL`, product.`SubCategoryID` FROM product INNER JOIN subcategory ON product.SubCategoryID = subcategory.SubCategoryID INNER JOIN text ON subcategory.TextID = text.TextID WHERE product.CategoryID = ".$row['CategoryID'];
                                                 $result2 = mysqli_query($conn,$sql2);
                                                 ?>
-                                                <h4>Categories</h4>
-                                                <ul>
-                                                <?php
+                                                    <h4>Categories</h4>
+                                                    <ul>
+                                                        <?php
                                                 while($row2 = $result2->fetch_array(true)) {
                                                     echo " <li><a href='".$prepath."pages/search.php?byCategory=".$row['CategoryID']."&bySubcategory=".$row2['SubCategoryID']."'>".$row2['EN']."</a></li>";
                                                 }
                                                 ?>
-                                                </ul>
+                                                    </ul>
                                             </div>
                                             <div class="columns medium-4">
                                                 <div class="menu-thumb _<?=$row['CategoryID']?>"></div>
