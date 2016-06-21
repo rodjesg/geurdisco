@@ -38,7 +38,7 @@ exit();
 //4.upload script afbeelding
 
 $target_dir = "../files/products/";
-$target_file = $target_dir . basename($_FILES["afbeelding"]["afbeelding"]);
+$target_file = $target_dir . basename($_FILES["afbeelding"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
