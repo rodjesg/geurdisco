@@ -63,7 +63,7 @@ require "../includes/header.php";
 
                     <div class="large-8 columns">
 
-                        <div id="googleMap" style=""></div>
+                        <div id="googleMap"></div>
                     </div>
                 </div>
         </div>

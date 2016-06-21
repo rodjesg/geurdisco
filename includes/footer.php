@@ -24,21 +24,21 @@
             <div class="columns small-12 medium-4">
                 <h4>Geurdiscounter.nl</h4>
                 <ul>
-                    <li><a href="<?=$prepath?>pages/contact.php">Contact</a></li>
                     <li><a href="<?=$prepath?>pages/verzendinfo.php">Shipping info</a></li>
+                    <li><a href="<?=$prepath?>pages/beleid.php">Policy</a></li>
+                    <li><a href="<?=$prepath?>pages/contact.php">Social Media</a></li>
+                    <li><a href="<?=$prepath?>pages/contact.php">Support</a></li>
                     <li><a href="<?=$prepath?>pages/winkelzoeker.php">Store locator</a></li>
-                    <li><a href="<?=$prepath?>pages/account.php">Support</a></li>
-                    <li><a href="<?=$prepath?>pages/account.php">Register</a></li>
                 </ul>
             </div>
 
             <div class="columns small-12 medium-4">
                 <h4>Quick links</h4>
                 <ul>
-                    <li><a href="<?=$prepath?>pages/account.php">Account</a></li>
                     <li><a href="<?=$prepath?>pages/contact.php">Contact</a></li>
+                    <li><a href="<?=$prepath?>pages/account.php">Register</a></li>
                     <li><a href="<?=$prepath?>pages/product.php">Product</a></li>
-                    <li><a href="<?=$prepath?>pages/overview.php">Overview</a></li>
+                    <li><a href="<?=$prepath?>pages/shoppingbag.php">Shoppingbag</a></li>
                     <li><a href="<?=$prepath?>pages/wishlist.php">Wishlist</a></li>
                 </ul>
             </div>
