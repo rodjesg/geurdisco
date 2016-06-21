@@ -1,6 +1,7 @@
 <?php
 
 require '../includes/dbconnect.php';
+header("Content-Type: text/html; charset=ISO-8859-1");
 
 ?>
 
@@ -56,6 +57,7 @@ aside a:hover{
         
 select{
     padding: 12px 20px;
+    width: 150px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -72,6 +74,10 @@ select{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+        }
+        
+ input[type=file] {
+    padding: 12px 20px 12px 0px;
         }
         
 input[type=text]:focus {
@@ -100,6 +106,7 @@ input[type=text]:focus {
 
 	<head>
 		<meta charset="UTF-8">
+        <meta charset="ISO">
 		<meta name="author" content="Dennis van den Broek">
 		<title>Admin</title>
 	</head>
@@ -120,7 +127,7 @@ input[type=text]:focus {
 
 		<main>
             <div class="form">
-                <form class="ProductToevoegen" action="../functions/addProduct.php" method="post">
+                <form class="ProductToevoegen" action="../functions/addProduct.php" method="post" enctype="multipart/form-data" >
 				    <fieldset>
                        <h3>Product toevoegen</h3>
                             <label for="product naam">Product naam:</label><br>
@@ -128,15 +135,15 @@ input[type=text]:focus {
                             <label for="prijs">Prijs:</label><br>
                             <input type="text" name="Prijs"><br>
                             <label for="btw">BTW percentage: </label><br>
-                            <select>
+                            <select name="btw">
                                 <option value="21">21%</option>
                                 <option value="6">6%</option>
                                 <option value="0">Geen</option>
                             </select><br>
                             <label for="voorraad">Aantal in voorraad:</label><br>
-                            <input type="text" name="Voorraad"><br>
+                            <input type="text" name="voorraad"><br>
                             <label for="merk">Merk: </label><br>
-                            <select>
+                            <select name="merk">
                               <?php
                                 $query = "SELECT * FROM brand;";
                                 $result = mysqli_query($conn,$query);
@@ -144,10 +151,34 @@ input[type=text]:focus {
                                     echo "<option value='".$row['BrandID']."'>".$row['BrandName']."</option>";
                                 }
                                 ?>                       
-                          </select>
-                           <button type="submit" class="button">Register</button>              
+                          </select><br>
+                          <label for="Text">Categorie:</label><br>
+                          <select name="categorie">
+                              <?php
+                                $query = "SELECT * FROM `text` JOIN `category` ON `text`.`TextID` = `category`.`TextID`";
+                                $result = mysqli_query($conn,$query);
+                                while ($row = $result->fetch_array(true)) {
+                                    echo "<option value='".$row['TextID']."'>".$row['NL']."</option>";
+                                }
+                                ?>                       
+                          </select><br>
+                          <label for="Text">Subcategorie:</label><br>
+                          <select name="subcategorie">
+                              <?php
+                                $query = "SELECT * FROM `text` JOIN `subcategory` ON `text`.`TextID` = `subcategory`.`TextID`";
+                                $result = mysqli_query($conn,$query);
+                                while ($row = $result->fetch_array(true)) {
+                                    echo "<option value='".$row['SubCategoryID']."'>".$row['NL']."</option>";
+                                }
+                                ?>                       
+                          </select><br>
+                          <input type="file" name="afbeelding" id="afbeelding"><br>
+                        <button type="submit" class="button">Voeg product toe</button>              
                      </fieldset>
             </form></div>
+            
+            
+
 			
 		</main>
 		
