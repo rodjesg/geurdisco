@@ -9,7 +9,7 @@
          top: 5px;
 		 margin: 15px 15px 20px 15px;
          height: 160px;
-		 background-color: skyblue;
+		 background-color: crimson;
          text-align: left center;
          padding-top: 2px;
 		 padding-left: 35px;
@@ -25,7 +25,7 @@
  aside{
 	position: relative;
 	margin-right: 15px;
-	background-color: bisque;
+	background-color: darkcyan;
 	height: 40px;
 	margin: 15px 10px 15px 15px;
 	border-radius: 5px;
@@ -38,6 +38,11 @@ aside a{
 	color: darkseagreen;
 	padding-right: 20px;
 	text-decoration: none;
+        }
+        
+aside a:hover{
+	background: white;
+}
     
     
     
@@ -51,17 +56,17 @@ aside a{
 		<title>Admin</title>
 	</head>
 	
-	<body>
-		
-		<header><h1>Beheersysteem Geurdiscounter.nl</h1></header>
+	<body><header><h1>Beheersysteem Geurdiscounter.nl</h1></header>
+        
 		
 		<aside>
-				<a href="index.html">Product wijzigen</a>
-				<a href="koffie.html">Gebruikers beheren</a>
-				<a href="thee.html">Database</a>
-				<a href="formulier.html">Van alles</a>
+                <a href="admin.php">Home</a>
+				<a href="productAdd.php">Product toevoegen</a>
+				<a href="">Gebruikers beheren</a>
+				<a href="">Database</a>
+				<a href="">Van alles</a>
 		</aside>
-		
+
 		<main>
 			
 		</main>
