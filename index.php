@@ -1,6 +1,9 @@
 <?php
 $title = "Home";
 $home = true;
+setlocale(LC_TIME, 'nl_NL', 'nl', 'du');
+date_default_timezone_set('Europe/Amsterdam');
+$today = date("Y-m-d");
 require "includes/header.php";
 ?>
 
@@ -16,11 +19,12 @@ require "includes/header.php";
             <div class="row owl-carousel products">
 
                 <?php
-                $query = "SELECT * FROM product ORDER BY ProductID DESC LIMIT 10";
+                $query = "SELECT * FROM sale INNER JOIN product ON sale.ProductID = product.ProductID WHERE '". $today ."' BETWEEN sale.StartDate AND sale.EndDate ORDER BY sale.EndDate DESC";
                 $result = mysqli_query($conn,$query);
                 while ($row = $result->fetch_array(true)) {
-                    include('includes/product-block.php');
+                    include('includes/product-block-sale.php');
                 }
+
                 ?>
 
             </div>
@@ -28,6 +32,7 @@ require "includes/header.php";
 
             <div class="row">
                 <div class="columns small-12">
+
                     <h3>Recently added</h3>
                 </div>
                 <div class="row owl-carousel products">

@@ -210,7 +210,30 @@
         bottom: 15px;
         right: 0;
     }
+    .product-block .product-thumb .product-priceblock-sale {
+        position: absolute;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        background: red;
+        color: #fff;
+        padding: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        font-size: 1.5rem;
+        bottom: 15px;
+        right: 0;
+    }
     .product-block .product-thumb .product-priceblock .decimal {
+        font-size: 1rem;
+        padding-bottom: 0.5rem;
+        float: right;
+    }
+    .product-block .product-thumb .product-priceblock .decimalSale {
+        font-size: 1rem;
+        padding-bottom: 0.5rem;
+        float: right;
+    }
+    .product-block .product-thumb .product-priceblock .discount {
         font-size: 1rem;
         padding-bottom: 0.5rem;
         float: right;
