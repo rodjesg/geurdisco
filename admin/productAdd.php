@@ -83,7 +83,7 @@ select{
 input[type=text]:focus {
     background-color: lightblue;
 }
-        
+   
         .ProductToevoegen{
                background: darkturquoise;
         }
@@ -121,7 +121,7 @@ input[type=text]:focus {
                 <a href="admin.php">Home</a>
 				<a href="productAdd.php">Product toevoegen</a>
 				<a href="users.php">Gebruikers beheren</a>
-				<a href="">Zoektermen beheren</a>
+				<a href="search.php">Zoektermen beheren</a>
 		</aside>
 
 		<main>

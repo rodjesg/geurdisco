@@ -29,6 +29,8 @@ require "../includes/dbconnect.php";
             margin: 8px 0;
         }
     
+    
+      
        input[type=password] {
             width: 100%;
             margin: 8px 0;

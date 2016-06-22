@@ -10,6 +10,8 @@ header("Content-Type: text/html; charset=ISO-8859-1");
 <html>
     
     <style>
+        
+       
  
  header{
 		 position: relative;
@@ -84,7 +86,7 @@ input[type=text]:focus {
     background-color: lightblue;
 }
         
-        .GebruikersBeheren{
+        .ZoektermenBeheren{
                background: darkturquoise;
         }
 
@@ -100,7 +102,7 @@ input[type=text]:focus {
             font-weight: bold;
         }
     
-      
+    
     </style>
 
 
@@ -108,12 +110,12 @@ input[type=text]:focus {
 		<meta charset="UTF-8">
         <meta charset="ISO">
 		<meta name="author" content="Dennis van den Broek">
-		<title>Admin/gebruikers</title>
+		<title>Admin/zoektermen</title>
 	</head>
 	
 	<body>
         <header>
-            <h1>Beheersysteem Geurdiscounter.nl -- Gebruikers beheren</h1>
+            <h1>Beheersysteem Geurdiscounter.nl -- Zoektermen beheren</h1>
         </header>
         
 		
@@ -126,24 +128,20 @@ input[type=text]:focus {
 
 		<main>
             <div class="form">
-                <form class="GebruikersBeheren" action="../functions/adminUsers.php" method="post">
+                <form class="ZoektermenBeheren" action="../functions/deleteSearch.php" method="post">
 				    <fieldset>
-                       <h3>Beheer gebruikers wijzigen</h3>
-                            <label for="Kies gebruiker">Kies gebruiker:</label><br>
-                            <select name="gebruikers">
-                              <?php
-                                $query = "SELECT * FROM manager;";
-                                $result = mysqli_query($conn,$query);
-                                while ($row = $result->fetch_array(true)) {
-                                    echo "<option value='".$row['ManagerID']."'>".$row['Email']."</option>";
-                                }
-                                ?>                       
+                       <h3>Zoektermen verwijderen</h3>
+                         <label for="zoektermAll">Alle zoektermen verwijderen?</label><br>
+                         <select name="zoektermAll">
+                                <option value="nee">Nee</option>
+                                <option value="ja">Ja</option>            
                           </select><br>
-                          <label for="mail">Nieuwe E-mail:</label><br>
-                          <input type="text" name="mail"><br>
-                          <label for="confirmMail">Bevestig nieuwe E-mail</label><br>
-                          <input type="text" name="confirmMail"><br>
-                        <button type="submit" class="button">Pas wijzigingen toe</button>              
+                         <label for="zoektermNoResult">Zoektermen verwijderen welke geen resultaten opleverd?</label><br>
+                         <select name="zoektermNoResult">
+                                <option value="ja">Ja</option>
+                                <option value="nee">Nee</option>            
+                          </select><br>
+                        <button type="submit" class="button">Verwijder zoektermen</button>              
                      </fieldset>
             </form></div>
 		</main>
