@@ -8,10 +8,10 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // To protect MySQL injection (more detail about MySQL injection)
-//$username = stripslashes($username);
-//$password = stripslashes($password);
-//$username = mysql_real_escape_string($username);
-//$password = mysql_real_escape_string($password);
+$username = stripslashes($username);
+$password = stripslashes($password);
+//$username = mysqli_real_escape_string($username);
+//$password = mysqli_real_escape_string($password);
 
 $sql="SELECT * FROM manager WHERE Email='$username' and Password='$password'";
 $result = mysqli_query($conn, $sql);
@@ -25,7 +25,7 @@ if ($count==1) {
     // create login sessions
     $_SESSION['admin']['status'] = true;
     $_SESSION['admin']['accountInfo'] = $accountInfo;
-    header('location:../pages/dashboard.php');
+    header('location:pages/dashboard.php');
 } else {
     echo "Inloggen mislukt!";
 }

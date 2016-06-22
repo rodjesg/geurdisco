@@ -17,7 +17,7 @@ $tekstEN = $_POST['tekstEN'];
 //1. check of alle velden zijn gevuld
 
 if ($_POST['ProductNaam'] == "" || $_POST['Prijs'] == "" || $_POST['btw'] == "" || $_POST['voorraad'] == "" || $_POST['merk'] == "") {
-    header('location:../admin/productAdd.php');
+    header('location:../pages/add-product.php');
     die();
 }
 
@@ -108,7 +108,7 @@ $sql = "INSERT INTO `product` (`ProductName`, `Price`, `BTW`, `Stock`, `BrandID`
 $result = mysqli_query($conn,$sql);
 
 echo nl2br ("Product is succesvol toegevoegd!!\n\n");
-$text = '<a href=../admin/ProductAdd.php "target="_blank">Klik hier om terug te gaan</a>';
+$text = '<a href="../pages/add-product.php">Klik hier om terug te gaan</a>';
 echo $text;
 
 ?>

@@ -1,6 +1,6 @@
 <?php
-$title = "Admin";
-$home = false;
+$title = "Login";
+include '../includes/header.php';
 require "../includes/dbconnect.php";
 ?>
 
@@ -53,3 +53,6 @@ require "../includes/dbconnect.php";
 </form>
 
 
+<?php
+include '../includes/footer.php';
+?>

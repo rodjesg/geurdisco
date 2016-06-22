@@ -14,7 +14,7 @@ $gebruiker = $_POST['gebruikers'];
 
 if ($_POST['mail'] == "" || $_POST['confirmMail'] == "") {   
    echo nl2br ("niet alle velden zijn ingevuld\n\n");
-   $text = '<a href=../admin/users.php "target="_blank">Klik hier om terug te gaan</a>';
+   $text = '<a href="../pages/admins.php">Klik hier om terug te gaan</a>';
    echo $text;
     die();
 }
@@ -22,7 +22,7 @@ if ($_POST['mail'] == "" || $_POST['confirmMail'] == "") {
 //2. check if confirm velden overeenkomen
 if($_POST["mail"] !== $_POST["confirmMail"]) {
 echo nl2br ("velden komen niet overeen!\n\n");
-$text = '<a href=../admin/users.php "target="_blank">Klik hier om terug te gaan</a>';
+$text = '<a href="../pages/admins.php">Klik hier om terug te gaan</a>';
 echo $text;
 die();      
 }
@@ -34,7 +34,7 @@ $count = mysqli_num_rows($result);
 
 if ($count > 0){
 echo nl2br ("Email komt reeds voor!\n\n");
-$text = '<a href=../admin/users.php "target="_blank">Klik hier om terug te gaan</a>';
+$text = '<a href="../pages/admins.php">Klik hier om terug te gaan</a>';
 echo $text;
 exit();
 }
@@ -45,9 +45,8 @@ $sql = "UPDATE `manager` SET `Email`='$mail' WHERE `ManagerID` = $gebruiker;";
 $result = mysqli_query($conn,$sql);
 
 echo nl2br ("Accountwijzingen succesvol aangepast!\n\n");
-$text = '<a href=../admin/admin.php "target="_blank">Klik hier om terug te gaan</a>';
+$text = '<a href="../pages/dashboard.php">Klik hier om terug te gaan</a>';
 echo $text;
-
 
 ?>
 
