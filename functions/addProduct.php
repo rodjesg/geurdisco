@@ -13,6 +13,8 @@ $voorraad = $_POST['voorraad'];
 $merk = $_POST['merk'];
 $categorie = $_POST['categorie'];
 $subcategorie= $_POST['subcategorie'];
+$tekst = $_POST['tekst'];
+$tekstEN = $_POST['tekstEN'];
 
 //1. check of alle velden zijn gevuld
 
@@ -36,7 +38,7 @@ else {
 //3. check of voorraad een integer is
 
 //4. check of product al bestaat
-$sql = "SELECT * FsROM `product` WHERE `ProductName` = '$naam';";
+$sql = "SELECT * FROM `product` WHERE `ProductName` = '$naam';";
 $result = mysqli_query($conn,$sql);
 $count = mysqli_num_rows($result);
 
@@ -64,10 +66,20 @@ if(isset($_POST["submit"])) {
 }
 
 
-//5. voer query in DB
-$sql = "INSERT INTO `product` (`ProductName`, `Price`, `BTW`, `Stock`, `BrandID`,`SubCategoryID`,`CategoryID`) VALUES ('$naam',$prijs,$btw,$voorraad,$merk,$subcategorie,$categorie);";
+//5. voer query in DB TextID
+$sql = "INSERT INTO `text` (`EN`, `NL`) VALUES ('$tekstEN','$tekst');";
 $result = mysqli_query($conn,$sql);
 
+//6. krijg textID van zojuist ingevoerde text
+$tekstID = mysqli_insert_id($conn);
+
+//7. voer query in DB Product
+$sql = "INSERT INTO `product` (`ProductName`, `Price`, `BTW`, `Stock`, `BrandID`,`SubCategoryID`,`CategoryID`,`TextID`) VALUES ('$naam',$prijs,$btw,$voorraad,$merk,$subcategorie,$categorie,$tekstID);";
+$result = mysqli_query($conn,$sql);
+
+echo nl2br ("Product is succesvol toegevoegd!!\n\n");
+$text = '<a href=../admin/ProductAdd.php "target="_blank">Klik hier om terug te gaan</a>';
+echo $text;
 
 ?>
 

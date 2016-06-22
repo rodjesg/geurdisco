@@ -126,7 +126,7 @@ input[type=text]:focus {
 
 		<main>
             <div class="form">
-                <form class="ProductToevoegen" action="../functions/addProduct.php" method="post" enctype="multipart/form-data" >
+                <form class="ProductToevoegen" action="../functions/addProduct.php" method="post" enctype="multipart/form-data" id="usrform" >
 				    <fieldset>
                        <h3>Product toevoegen</h3>
                             <label for="product naam">Product naam:</label><br>
@@ -171,10 +171,20 @@ input[type=text]:focus {
                                 }
                                 ?>                       
                           </select><br>
+                          <label for="afbeelding">Voeg afbeelding toe:</label><br>
                           <input type="file" name="afbeelding" id="afbeelding"><br>
+                          <label for="Text">Begeleidende tekst product:</label><br>
+                          <textarea rows="6" cols="70" name="tekst" form="usrform"></textarea><br>
+                          <label for="Text">Begeleidende tekst product Engels:</label><br>
+                          <textarea rows="6" cols="70" name="tekstEN" form="usrform"></textarea><br>
                         <button type="submit" class="button">Voeg product toe</button>              
                      </fieldset>
-            </form></div>
+            </form>
+                
+                
+            </div>
+    
+
             
             
 
