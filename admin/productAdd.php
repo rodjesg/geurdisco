@@ -108,7 +108,7 @@ input[type=text]:focus {
 		<meta charset="UTF-8">
         <meta charset="ISO">
 		<meta name="author" content="Dennis van den Broek">
-		<title>Admin</title>
+		<title>Admin/Products</title>
 	</head>
 	
 	<body>
@@ -120,9 +120,8 @@ input[type=text]:focus {
 		<aside>
                 <a href="admin.php">Home</a>
 				<a href="productAdd.php">Product toevoegen</a>
-				<a href="">Gebruikers beheren</a>
-				<a href="">Database</a>
-				<a href="">Van alles</a>
+				<a href="users.php">Gebruikers beheren</a>
+				<a href="">Zoektermen beheren</a>
 		</aside>
 
 		<main>

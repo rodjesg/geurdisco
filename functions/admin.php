@@ -13,7 +13,7 @@ $password = $_POST['password'];
 //$username = mysql_real_escape_string($username);
 //$password = mysql_real_escape_string($password);
 
-$sql="SELECT * FROM manager WHERE UserName='$username' and Password='$password'";
+$sql="SELECT * FROM manager WHERE Email='$username' and Password='$password'";
 $result = mysqli_query($conn, $sql);
 $accountInfo = $result->fetch_array(true);
 

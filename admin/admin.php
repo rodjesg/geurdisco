@@ -53,7 +53,7 @@ aside a:hover{
 	<head>
 		<meta charset="UTF-8">
 		<meta name="author" content="Dennis van den Broek">
-		<title>Admin</title>
+		<title>Admin/Home</title>
 	</head>
 	
 	<body><header><h1>Beheersysteem Geurdiscounter.nl</h1></header>
@@ -62,9 +62,8 @@ aside a:hover{
 		<aside>
                 <a href="admin.php">Home</a>
 				<a href="productAdd.php">Product toevoegen</a>
-				<a href="">Gebruikers beheren</a>
-				<a href="">Database</a>
-				<a href="">Van alles</a>
+				<a href="users.php">Gebruikers beheren</a>
+				<a href="">Zoektermen beheren</a>
 		</aside>
 
 		<main>

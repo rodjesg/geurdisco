@@ -60,8 +60,10 @@ $huisnrToev = $_POST['huisnrToev'];
 $woonplaats = $_POST['woonplaats'];
 $telefoon = $_POST['telefoon'];
 $land = $_POST['land'];
+$sekse = $_POST['sekse'];
+$taal = $_POST['taal'];
    
- $sql = "INSERT INTO `account` (`SureName`, `Name`, `Insertion`, `Address`, `Nr`, `Addition`, `PostCode`, `City`, `Phone`, `BirthDate`, `Email`, `Password`,`CountryID`) VALUES ('$voornaam','$achternaam','$tussenvoegsel','$adres','$huisnr','$huisnrToev','$postcode','$woonplaats','$telefoon','$geboortedatum','$email','$password','$land');";
+ $sql = "INSERT INTO `account` (`SureName`, `Name`, `Insertion`, `Address`, `Nr`, `Addition`, `PostCode`, `City`, `Phone`, `BirthDate`, `Email`, `Password`,`CountryID`,`Sexe`,`LanguagePreference`) VALUES ('$voornaam','$achternaam','$tussenvoegsel','$adres','$huisnr','$huisnrToev','$postcode','$woonplaats','$telefoon','$geboortedatum','$email','$password','$land','$sekse','$taal');";
  $result = mysqli_query($conn,$sql);
 
 $_SESSION['errors'] = array("Account succesvol aangemaakt!");

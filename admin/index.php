@@ -45,7 +45,7 @@ require "../includes/dbconnect.php";
                   <form class="admin" action="../functions/admin.php" method="post">
 				    <fieldset>
                        <h5>Admin log in</h5>
-                            <label for="username">Username</label>
+                            <label for="username">Username (E-mail)</label>
                             <input type="text" name="username" placeholder="Fill in you're username">
                             <label for="password">Password</label>
                             <input type="password" name="password" placeholder="Fill in you're password">

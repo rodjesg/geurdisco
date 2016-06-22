@@ -64,6 +64,17 @@ require "../includes/header.php";
                             <input type="text" name="achternaam" placeholder="Achternaam"><br>
                             <label for="Geboortedatum">Geboortedatum *</label>	
                             <input type="text" name="geboortedatum" placeholder="jjjj-mm-dd"><br>
+                            <label for="sekse">Geslacht *</label>	
+                            <select name="sekse">
+                                <option value="M">Man</option>
+                                <option value="V">Vrouw</option>
+                                <option value="U">Uniseks</option>
+                            </select> 
+                            <label for="taal">Taal voorkeur *</label>
+                            <select name="taal">
+                                 <option value="NL">Nederlands / Dutch</option>
+                                 <option value="EN">Engels / English</option>  
+                            </select>  
                        <h5>Woonplaats / factuuradres</h5>
                             <label for="adres">Adres *</label>
 				            <input type="text" name="adres" placeholder="Vul je adres in"><br>

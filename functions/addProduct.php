@@ -3,6 +3,7 @@ ob_start();
 session_start();
 require "../includes/dbconnect.php";
 
+
 //Product toevoegen via CMS
 
 $naam = $_POST['ProductNaam'];
@@ -16,17 +17,26 @@ $subcategorie= $_POST['subcategorie'];
 //1. check of alle velden zijn gevuld
 
 if ($_POST['ProductNaam'] == "" || $_POST['Prijs'] == "" || $_POST['btw'] == "" || $_POST['voorraad'] == "" || $_POST['merk'] == "") {   
-    echo "niet alle velden zijn ingevuld";
+    header('location:../admin/productAdd.php');
     die();
 }
 
 
 //2. check of prijs een getal is
 
+ if (is_numeric($prijs)) {
+        echo "";
+    } 
+
+else {
+        echo "Er moet een getal bij Prijs worden ingevuld!";
+        exit();
+}
+
 //3. check of voorraad een integer is
 
 //4. check of product al bestaat
-$sql = "SELECT * FROM `product` WHERE `ProductName` = '$naam';";
+$sql = "SELECT * FsROM `product` WHERE `ProductName` = '$naam';";
 $result = mysqli_query($conn,$sql);
 $count = mysqli_num_rows($result);
 
