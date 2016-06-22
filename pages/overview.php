@@ -70,7 +70,8 @@ else {
                         </div>
                     </div>
                     <div class="large-8 columns">
-                        <img class="productimg" src="http://dummyimage.com/750x150/000000/fff" title="productview">
+                        <img class="productimg" src="<?=$prepath?>/assets/img/perfume-banner.png" title="productview">
+                        <br>
                         <h3> Recently Added</h3>
                         <div class="row products">
                             <?php
