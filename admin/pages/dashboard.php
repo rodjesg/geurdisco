@@ -46,7 +46,7 @@
 </style>
 
 <?php
-include 'includes/menu.php'
+include '../includes/menu.php'
 ?>
 
 <main>
