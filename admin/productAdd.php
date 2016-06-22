@@ -177,7 +177,7 @@ input[type=text]:focus {
                           <textarea rows="6" cols="70" name="tekst" form="usrform"></textarea><br>
                           <label for="Text">Begeleidende tekst product Engels:</label><br>
                           <textarea rows="6" cols="70" name="tekstEN" form="usrform"></textarea><br>
-                        <button type="submit" class="button">Voeg product toe</button>              
+                        <input type="submit" class="button"></input>              
                      </fieldset>
             </form>
                 

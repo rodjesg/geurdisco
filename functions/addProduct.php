@@ -60,10 +60,42 @@ if(isset($_POST["submit"])) {
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
+        echo "Bestand is geen afbeelding";
         $uploadOk = 0;
     }
 }
+// Check if file already exists
+if (file_exists($target_file)) {
+    echo "Bestand bestaat al!";
+    $uploadOk = 0;
+}
+// Check file size
+if ($_FILES["afbeelding"]["size"] > 500000) {
+    echo "Het bestand is te groot!";
+    $uploadOk = 0;
+}
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Alleen JPG, JPEG, PNG & GIF files is toegestaan";
+    $uploadOk = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Je bestand is niet geupload!";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["afbeelding"]["tmp_name"], $target_file)) {
+        echo "Het bestand". basename( $_FILES["afbeelding"]["name"]). " is geupload";
+    } 
+    
+    else {
+        echo "Er is iets verkeerds gegaan met het uploaden.";
+        exit();
+    }
+}
+
+$afbeelding = $target_file;
 
 
 //5. voer query in DB TextID
@@ -74,7 +106,7 @@ $result = mysqli_query($conn,$sql);
 $tekstID = mysqli_insert_id($conn);
 
 //7. voer query in DB Product
-$sql = "INSERT INTO `product` (`ProductName`, `Price`, `BTW`, `Stock`, `BrandID`,`SubCategoryID`,`CategoryID`,`TextID`) VALUES ('$naam',$prijs,$btw,$voorraad,$merk,$subcategorie,$categorie,$tekstID);";
+$sql = "INSERT INTO `product` (`ProductName`, `Price`, `BTW`, `Stock`, `BrandID`,`SubCategoryID`,`CategoryID`,`TextID`,`ProductImage`) VALUES ('$naam',$prijs,$btw,$voorraad,$merk,$subcategorie,$categorie,$tekstID,'$afbeelding');";
 $result = mysqli_query($conn,$sql);
 
 echo nl2br ("Product is succesvol toegevoegd!!\n\n");
