@@ -142,7 +142,7 @@
         display: block;
     }
     .content {
-        padding-top: 85px;
+        padding-top: 95px;
         padding-bottom: 25px;
     }
     .footer {
@@ -215,7 +215,7 @@
         padding-bottom: 0.5rem;
         float: right;
     }
-    .product-block .button {
+    .product-block .button, .order-btn {
         width: 100%;
         font-size: 1.1rem;
         margin-top: 25px;
@@ -336,6 +336,9 @@
         display: inline-block;
         margin-top: 30px;
     }
+    .shoppingbag-total.panel {
+        margin-top: 0;
+    }
 }
 
 /* min-width 641px, medium screens */
@@ -442,7 +445,7 @@
         display: block;
     }
     .content {
-        padding-top: 130px;
+        padding-top: 150px;
     }
     .footer ul {
         margin-bottom: 0;
