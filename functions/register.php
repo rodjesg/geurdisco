@@ -28,7 +28,7 @@ exit();
 
 if($_POST["password"] !== $_POST["passwordConfirm"]) {
  $_SESSION['errors'] = array("Wachtwoorden komen niet overeen!");
-header('location:../pages/account.php');
+ header('location:../pages/account.php');
 exit();
  
 }
@@ -62,12 +62,21 @@ $telefoon = $_POST['telefoon'];
 $land = $_POST['land'];
 $sekse = $_POST['sekse'];
 $taal = $_POST['taal'];
-   
- $sql = "INSERT INTO `account` (`SureName`, `Name`, `Insertion`, `Address`, `Nr`, `Addition`, `PostCode`, `City`, `Phone`, `BirthDate`, `Email`, `Password`,`CountryID`,`Sexe`,`LanguagePreference`) VALUES ('$voornaam','$achternaam','$tussenvoegsel','$adres','$huisnr','$huisnrToev','$postcode','$woonplaats','$telefoon','$geboortedatum','$email','$password','$land','$sekse','$taal');";
- $result = mysqli_query($conn,$sql);
+
+$sql = "INSERT INTO `account` (`SureName`, `Name`, `Insertion`, `Address`, `Nr`, `Addition`, `PostCode`, `City`, `Phone`, `BirthDate`, `Email`, `Password`,`CountryID`,`Sexe`,`LanguagePreference`) VALUES ('$voornaam','$achternaam','$tussenvoegsel','$adres','$huisnr','$huisnrToev','$postcode','$woonplaats','$telefoon','$geboortedatum','$email','$password','$land','$sekse','$taal');";
+$result = mysqli_query($conn,$sql);
 
 $_SESSION['errors'] = array("Account succesvol aangemaakt!");
+$sql = "INSERT INTO `account` (`SureName`, `Name`, `Insertion`, `Address`, `Nr`, `Addition`, `PostCode`, `City`, `Phone`, `BirthDate`, `Email`, `Password`,`CountryID`) VALUES ('$voornaam','$achternaam','$tussenvoegsel','$adres','$huisnr','$huisnrToev','$postcode','$woonplaats','$telefoon','$geboortedatum','$email','$password','$land');";
 
+if($conn->query($sql)) {
+ $_SESSION['errors'] = array("Account succesvol aangemaakt!");
+}
+else {
+ $_SESSION['errors'] = array("Er ging iets mis. Probeer opnieuw.");
+}
+
+//$result = mysqli_query($conn,$sql);
 header('location:../index.php');
 exit();
 ?>

@@ -30,7 +30,7 @@ if ($count==1) {
     $_SESSION['errors'] = array("Inloggen mislukt.");
 }
 
-header('location:../index.php');
+header('location:'.$_SERVER['HTTP_REFERER']);
 exit();
 
 ?>

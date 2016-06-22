@@ -29,6 +29,7 @@ else {
             $result = $result->fetch_array(true);
             $discount['value'] = "";
             $discount['type'] = "";
+            $discount['id'] = $result['DiscountCodeID'];
 
             if (!empty($result['Percentage']) && is_numeric($result['Percentage'])) {
                 // Discountcode is a percentage

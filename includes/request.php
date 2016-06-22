@@ -3,13 +3,24 @@
 date_default_timezone_set('Europe/Amsterdam');
 ?>
 
-
-
 <div class="large-12 columns ">
     <!-- Request question -->
-    <form method="post" name="offer">
-        <button class="button" name="submit" type="submit">Offerte aanvragen</button>
-    </form>
+    <?php
+    if(isset($_GET['succeed'])) {
+        echo "<h3>Offerte aanvraag ".$_SESSION['login']['accountInfo']['SureName']."</h3>";
+        echo "<div class='panel'>";
+        echo "<p><strong>Product</strong>: $searchterm</p>" ;
+        echo "<p>Een bevestiging is gemaild naar: " .$_SESSION['login']['accountInfo']['Email']."</p>";
+        echo "</div>";
+    }
+    else {
+    ?>
+        <form method="post" name="offer">
+            <button class="button" name="submit" type="submit">Offerte aanvragen</button>
+        </form>
+    <?php
+    }
+    ?>
 
     <!-- Ik wil nu als Ja klikt, dat dan de php volgt. Als je Nee klikt dan terug naar de hoofdpagina. Hoe doe je dat? -->
     <?php
@@ -34,10 +45,9 @@ date_default_timezone_set('Europe/Amsterdam');
             $mail = "bram@bramdehart.nl";
             mail($mail, 'Offerte aanvraag GeurDiscounter', $message, $headers);
 
-            $_SESSION['errors'] = array("Offerte verzonden naar $mail");
-            
+            //$_SESSION['errors'] = array("Offerte verzonden naar $mail");
             //$_SESSION['login']['accountInfo']['Email'];
-            //header('location:../pages/shoppingbag.php');
+            header('location:'.$_SERVER['HTTP_REFERER'].'&succeed');
         }
         else {
             $_SESSION['errors'] = array("Log in om een offerte aan te vragen.");

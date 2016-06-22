@@ -4,7 +4,6 @@ $title = "Wishlist";
 require "../includes/header.php";
 ?>
 
-
     <div class="content">
         <div class="container">
             <div class="row">

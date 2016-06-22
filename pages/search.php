@@ -8,29 +8,32 @@ require "../functions/search.php";
 <div class="content">
     <div class="container">
         <div class="row">
-            <div class="columns small-12">
-                <h3><?=sizeof($result_filtered);?> resultaten gevonden</h3>
-                <?php
-                    if (isset($byCategory) && isset($bySubcategory)) {
-                        $query = "SELECT * FROM category INNER JOIN text ON category.TextID = text.TextID WHERE CategoryID = $byCategory";
-                        $result = mysqli_query($conn,$query);
-                        $categoryName = $result->fetch_array(true);
-                        $query = "SELECT * FROM subcategory INNER JOIN text ON subcategory.TextID = text.TextID WHERE SubCategoryID = $bySubcategory";
-                        $result = mysqli_query($conn,$query);
-                        $subcategoryName = $result->fetch_array(true);
-
-                        echo "<a href='overview.php?id=".$categoryName['CategoryID']."'>".$categoryName['EN']."</a> > ".$subcategoryName['EN'];
-                    }
-                    else {
-                       echo "<h5>Je zocht naar '".$searchterm."'</h5>";
-                    }
-                ?>
-            </div>
-
             <?php
-            if (sizeof($result_filtered) > 0) {
-                ?>
+            if (!isset($_GET['succeed'])) {
+            ?>
+                <div class="columns small-12">
+                    <h3><?=sizeof($result_filtered);?> resultaten gevonden</h3>
+                    <?php
+                        if (isset($byCategory) && isset($bySubcategory)) {
+                            $query = "SELECT * FROM category INNER JOIN text ON category.TextID = text.TextID WHERE CategoryID = $byCategory";
+                            $result = mysqli_query($conn,$query);
+                            $categoryName = $result->fetch_array(true);
+                            $query = "SELECT * FROM subcategory INNER JOIN text ON subcategory.TextID = text.TextID WHERE SubCategoryID = $bySubcategory";
+                            $result = mysqli_query($conn,$query);
+                            $subcategoryName = $result->fetch_array(true);
 
+                            echo "<a href='overview.php?id=".$categoryName['CategoryID']."'>".$categoryName['EN']."</a> > ".$subcategoryName['EN'];
+                        }
+                        else {
+                           echo "<h5>Je zocht naar '".$searchterm."'</h5>";
+                        }
+                    ?>
+                </div>
+            <?php
+            }
+
+            if (sizeof($result_filtered) > 0) {
+            ?>
                 <div class="columns small-12 medium-4 large-3">
                     <h4>Filter your results</h4>
                     <hr>
@@ -163,6 +166,19 @@ require "../functions/search.php";
                 // offerte aanvragen
                 include('../includes/request.php');
             }
+
+
+            // insert searchterm into databases
+            if (isset($searchterm)) {
+                $foundResults = 0;
+                if (sizeof($result_filtered) > 0) {
+                    $foundResults = 1;
+                }
+                $query = "INSERT INTO searchterm(`SearchTerm`,`Result`,`Date`) VALUES('".$searchterm."',$foundResults,'".date("Y-m-d")."')";
+                //echo $query;
+                $conn->query($query);
+            }
+
             ?>
 
         </div>

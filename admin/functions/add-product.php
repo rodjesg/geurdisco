@@ -2,8 +2,6 @@
 ob_start();
 session_start();
 require "../includes/dbconnect.php";
-
-
 //Product toevoegen via CMS
 
 $naam = $_POST['ProductNaam'];
@@ -18,8 +16,8 @@ $tekstEN = $_POST['tekstEN'];
 
 //1. check of alle velden zijn gevuld
 
-if ($_POST['ProductNaam'] == "" || $_POST['Prijs'] == "" || $_POST['btw'] == "" || $_POST['voorraad'] == "" || $_POST['merk'] == "") {   
-    header('location:../admin/productAdd.php');
+if ($_POST['ProductNaam'] == "" || $_POST['Prijs'] == "" || $_POST['btw'] == "" || $_POST['voorraad'] == "" || $_POST['merk'] == "") {
+    header('location:../pages/add-product.php');
     die();
 }
 
@@ -27,8 +25,8 @@ if ($_POST['ProductNaam'] == "" || $_POST['Prijs'] == "" || $_POST['btw'] == "" 
 //2. check of prijs een getal is
 
  if (is_numeric($prijs)) {
-        echo "";
-    } 
+        //echo "";
+    }
 
 else {
         echo "Er moet een getal bij Prijs worden ingevuld!";
@@ -87,8 +85,8 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["afbeelding"]["tmp_name"], $target_file)) {
         echo "Het bestand". basename( $_FILES["afbeelding"]["name"]). " is geupload";
-    } 
-    
+    }
+
     else {
         echo "Er is iets verkeerds gegaan met het uploaden.";
         exit();
@@ -110,16 +108,7 @@ $sql = "INSERT INTO `product` (`ProductName`, `Price`, `BTW`, `Stock`, `BrandID`
 $result = mysqli_query($conn,$sql);
 
 echo nl2br ("Product is succesvol toegevoegd!!\n\n");
-$text = '<a href=../admin/ProductAdd.php "target="_blank">Klik hier om terug te gaan</a>';
+$text = '<a href="../pages/add-product.php">Klik hier om terug te gaan</a>';
 echo $text;
 
 ?>
-
-
-
-
-
-
-
-
-
