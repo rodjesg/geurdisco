@@ -2,7 +2,7 @@
 
 <html>
     
-    <style>
+<style>
  
  header{
 		 position: relative;
@@ -17,10 +17,10 @@
 		 border-radius: 5px;
 }
 
-        h1{
-            text-align: center;
-            padding-top: 30px;
-        }
+h1{
+	text-align: center;
+	padding-top: 30px;
+}
         
  aside{
 	position: relative;
@@ -51,28 +51,25 @@ aside a:hover{
     </style>
 
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="author" content="Dennis van den Broek">
-		<title>Admin/Home</title>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Dennis van den Broek">
+	<title>Admin/Home</title>
+</head>
 	
-	<body><header><h1>Beheersysteem Geurdiscounter.nl</h1></header>
-        
+<body>
+<header>
+	<h1>Beheersysteem Geurdiscounter.nl</h1>
+</header>
 		
-		<aside>
-                <a href="admin.php">Home</a>
-				<a href="productAdd.php">Product toevoegen</a>
-				<a href="users.php">Gebruikers beheren</a>
-				<a href="search.php">Zoektermen beheren</a>
-		</aside>
+<?php
+	include 'includes/menu.php'
+?>
+<main>
 
-		<main>
-			
-		</main>
-		
-		<footer></footer>
+</main>
+
+<footer></footer>
 	
-	</body>
-	
+</body>
 </html>

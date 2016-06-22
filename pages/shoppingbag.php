@@ -64,42 +64,89 @@ require "../includes/header.php";
             ?>
 
                 <!-- shopping bag total block -->
-                <div class="shoppingbag-total">
-                    <?php
-                        if($countProducts == 1) {
-                            $placeholder = "product";
-                        }
-                        else {
-                            $placeholder = "products";
-                        }
-                    ?>
-                    Order (<?=$countProducts?> <?=$placeholder?>)
-                    <hr>
-                    <h4>Discount</h4>
-
+                <div class="shoppingbag-total small-12 medium-6 medium-offset-6 panel columns">
+                    <div class="columns small-12 medium-8">
+                        <?php
+                            if($countProducts == 1) {
+                                $placeholder = "product";
+                            }
+                            else {
+                                $placeholder = "products";
+                            }
+                        ?>
+                        <h4>Order (<?=$countProducts?> <?=$placeholder?>)</h4>
+                    </div>
+                    <div class="columns small-12 medium-4 text-right">
+                        <h4>&euro; <?=$subTotal?></h4>
+                    </div>
+                    <div class="columns small-12">
+                        <hr>
+                        <h5>Discount</h5>
+                    </div>
                     <!-- check if discount code is present -->
                     <?php
                         if(isset($_SESSION['discountcode']) && !empty($_SESSION['discountcode'])) {
                             // discount applied: show information
                     ?>
-                            <a class="button" href="../functions/delete-discount.php">Verwijder discount</a>
+                            <div class="columns small-12 medium-8 ">
+                                <a class="button" href="../functions/delete-discount.php">Verwijder discount</a>
+                            </div>
+                        <div class="columns small-12 medium-4 text-right">
+                            <?php
+                                echo "<pre>";
+                                print_r($_SESSION['discountcode']);
+                                echo "</pre>";
+                            
+                                $discountType = $_SESSION['discountcode']['type'];
+                                $discountValue = $_SESSION['discountcode']['value'];
+                                if ($discountType == "amount") {
+                                    echo "<h5>-&euro;$discountValue</h5>";
+                                }
+                                else {
+                                    echo "<h5>-$discountValue&#x0025;</h5>";
+                                }
+//                                echo "<pre>";
+//                                print_r($_SESSION['discountcode']);
+//                                echo "</pre>";
+                            ?>
+                        </div>
                     <?php
                         }
                         else {
                             // no discount applied: show form
                     ?>
                         <form action="../functions/add-discount.php" method="post">
-                            <input type="text" placeholder="Discountcode" name="discountcode">
-                            <input class="button" type="submit" value="Add code">
+                            <div class="columns small-12 medium-8">
+                                <input type="text" placeholder="Discountcode" name="discountcode">
+                            </div>
+                            <div class="columns small-12 medium-4 text-right">
+                                <input class="button" type="submit" value="Add code">
+                            </div>
                         </form>
                     <?php
                         }
                     ?>
 
+                    <div class="columns small-12">
+                        <hr>
+                    </div>
+                    <!-- delivery -->
+                    <div class="columns small-12 medium-4 columns text-right">
+                    </div>
+                    <!-- subtotal -->
+                    <div class="columns small-12 medium-8 columns">
+                        <h4>Subtotal</h4>
+                    </div>
+                    <div class="columns small-12 medium-4 columns text-right">
+                        <h4>&euro; price inc.</h4>
+                    </div>
+
+
 
                 </div>
-
-                <a href="shoppingbag-step2.php" class="button">Next</a>
+                <div class="small-12 columns">
+                    <a href="shoppingbag-step2.php" class="button">Next</a>
+                </div>
             <?php
             }
             else {

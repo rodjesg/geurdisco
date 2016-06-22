@@ -118,15 +118,31 @@ input[type=text]:focus {
         
 		
 		<aside>
+<<<<<<< Updated upstream:admin/productAdd.php
                 <a href="admin.php">Home</a>
 				<a href="productAdd.php">Product toevoegen</a>
 				<a href="users.php">Gebruikers beheren</a>
 				<a href="search.php">Zoektermen beheren</a>
+=======
+                <a href="dashboard.php">Home</a>
+				<a href="add-product.php">Product toevoegen</a>
+				<a href="">Gebruikers beheren</a>
+				<a href="">Database</a>
+				<a href="">Van alles</a>
+>>>>>>> Stashed changes:admin/pages/add-product.php
 		</aside>
 
 		<main>
             <div class="form">
+<<<<<<< Updated upstream:admin/productAdd.php
                 <form class="ProductToevoegen" action="../functions/addProduct.php" method="post" enctype="multipart/form-data" id="usrform" >
+=======
+<<<<<<< Updated upstream:admin/productAdd.php
+                <form class="ProductToevoegen" action="../functions/addProduct.php" method="post" enctype="multipart/form-data" >
+=======
+                <form class="ProductToevoegen" action="../../functions/addProduct.php" method="post">
+>>>>>>> Stashed changes:admin/pages/add-product.php
+>>>>>>> Stashed changes:admin/pages/add-product.php
 				    <fieldset>
                        <h3>Product toevoegen</h3>
                             <label for="product naam">Product naam:</label><br>
@@ -177,18 +193,10 @@ input[type=text]:focus {
                           <textarea rows="6" cols="70" name="tekst" form="usrform"></textarea><br>
                           <label for="Text">Begeleidende tekst product Engels:</label><br>
                           <textarea rows="6" cols="70" name="tekstEN" form="usrform"></textarea><br>
-                        <input type="submit" class="button"></input>              
+                        <input type="submit" class="button">
                      </fieldset>
             </form>
-                
-                
             </div>
-    
-
-            
-            
-
-			
 		</main>
 		
 		<footer></footer>

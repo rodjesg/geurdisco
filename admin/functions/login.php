@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-require "../includes/dbconnect.php";
+require "../../includes/dbconnect.php";
 
 // Define $username and $password 
 $username = $_POST['username'];
@@ -23,9 +23,9 @@ $count=mysqli_num_rows($result);
 // If result matched $username and $password, table row must be 1 row
 if ($count==1) {
     // create login sessions
-    $_SESSION['login']['status'] = true;
-    $_SESSION['login']['accountInfo'] = $accountInfo;
-    header('location:../admin/admin.php');
+    $_SESSION['admin']['status'] = true;
+    $_SESSION['admin']['accountInfo'] = $accountInfo;
+    header('location:../pages/dashboard.php');
 } else {
     echo "Inloggen mislukt!";
 }

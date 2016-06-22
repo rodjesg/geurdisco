@@ -44,7 +44,7 @@ require "../includes/header.php";
          <div class="row">
              <div class="large-12 columns ">
                   <h3>Account Credentials</h3><br>
-                  <form class="naw" action="../functions/nawAdd.php" method="post">
+                  <form class="naw" action="../functions/register.php" method="post">
 				    <fieldset>
                        <h5>Account gegevens</h5>
                             <label for="email">E-mail adress *</label>
@@ -92,7 +92,7 @@ require "../includes/header.php";
                                 $query = "SELECT * FROM country";
                                 $result = mysqli_query($conn,$query);
                                 while ($row = $result->fetch_array(true)) {
-                                    echo "<option value='".$row['CountryId']."'>".$row['Name']."</option>";
+                                    echo "<option value='".$row['CountryID']."'>".$row['Name']."</option>";
                                 }
                                 ?>
                             </select>            
